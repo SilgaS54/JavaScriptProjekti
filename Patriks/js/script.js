@@ -22,8 +22,13 @@ cuska[0] = { // definējām masīva čūska pirmo elementu, kuram kārta numurs 
 
 document.addEventListener("keydown", virziens);
 
+let virz;
+
 function virziens(event){
-    console.log(event.keyCode);
+    if(event.keyCode == 38) virz = "up"
+    if(event.keyCode == 40) virz = "down"
+    if(event.keyCode == 37) virz = "left"
+    if(event.keyCode == 39) virz = "right"
 }
 
 
@@ -41,7 +46,8 @@ function zimetSpeli() {
 
     cuska.pop();
 
-    //cuskaX = cuskaX + rut_izm;
+    if(virz == "right") cuskaX += rut_izm; // tas pats ka cuskaX = cuskaX + rut_izm
+    if(virz == "left") cuskaX -= rut_izm;
 
     let jaunaCuskasGalva = {
         x: cuskaX,
