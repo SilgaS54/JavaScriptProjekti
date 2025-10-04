@@ -20,6 +20,12 @@ cuska[0] = { // definējām masīva čūska pirmo elementu, kuram kārta numurs 
     y: 7*rut_izm
 }
 
+document.addEventListener("keydown", virziens);
+
+function virziens(event){
+    console.log(event.keyCode);
+}
+
 
 function zimetSpeli() {
     ctx.drawImage(sp_laukums, 0, 0); //spēles laukums
@@ -35,7 +41,7 @@ function zimetSpeli() {
 
     cuska.pop();
 
-    cuskaX = cuskaX + rut_izm;
+    //cuskaX = cuskaX + rut_izm;
 
     let jaunaCuskasGalva = {
         x: cuskaX,
