@@ -14,9 +14,17 @@ let ediens = {
     y: 10*rut_izm
 }
 
+let cuska = {
+    x: 6*rut_izm,
+    y: 7*rut_izm
+}
+
 function zimetSpeli() {
-    ctx.drawImage(sp_laukums, 0, 0);
-    ctx.drawImage(sp_mango, ediens.x, ediens.y);
+    ctx.drawImage(sp_laukums, 0, 0); //spēles laukums
+    ctx.drawImage(sp_mango, ediens.x, ediens.y); //ēdiens
+
+    ctx.fillStyle = "red"; //čūskas krāsa
+    ctx.fillRect(cuska.x, cuska.y, rut_izm, rut_izm); //čūska
 }
 
 let spele = setInterval(zimetSpeli, 100);
