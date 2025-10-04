@@ -7,9 +7,11 @@ sp_laukums.src = "img/ground.png";
 const sp_mango = new Image();
 sp_mango.src = "img/mango.png";
 
+let rut_izm = 32; //rūtiņas izmērs spēles laukumā
+
 let ediens = {
-    x: 400,
-    y: 300
+    x: 9*rut_izm,
+    y: 10*rut_izm
 }
 
 function zimetSpeli() {
