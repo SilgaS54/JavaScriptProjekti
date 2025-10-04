@@ -14,17 +14,35 @@ let ediens = {
     y: 10*rut_izm
 }
 
-let cuska = {
+let cuska = []; // definējām MASĪVU čūska, kurš ir tukšs
+cuska[0] = { // definējām masīva čūska pirmo elementu, kuram kārta numurs ir 0!
     x: 6*rut_izm,
     y: 7*rut_izm
 }
+
 
 function zimetSpeli() {
     ctx.drawImage(sp_laukums, 0, 0); //spēles laukums
     ctx.drawImage(sp_mango, ediens.x, ediens.y); //ēdiens
 
-    ctx.fillStyle = "red"; //čūskas krāsa
-    ctx.fillRect(cuska.x, cuska.y, rut_izm, rut_izm); //čūska
+    for(let i = 0; i < cuska.length; i++){
+        ctx.fillStyle = "red"; //čūskas krāsa
+        ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
+    }
+
+    let cuskaX = cuska[0].x;
+    let cuskaY = cuska[0].y;
+
+    cuska.pop();
+
+    cuskaX = cuskaX + rut_izm;
+
+    let jaunaCuskasGalva = {
+        x: cuskaX,
+        y: cuskaY
+    }
+    
+    cuska.unshift(jaunaCuskasGalva);
 }
 
 let spele = setInterval(zimetSpeli, 100);
