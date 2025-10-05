@@ -26,10 +26,12 @@ document.addEventListener("keydown", virziens);
 let virz;
 
 function virziens(event) {
+  console.log(event.keyCode);
   if (event.keyCode == 38) virz = "up";
   if (event.keyCode == 40) virz = "down";
   if (event.keyCode == 37) virz = "left";
   if (event.keyCode == 39) virz = "right";
+  if (event.keyCode == 32) virz = "stop";
 }
 
 function zimetSpeli() {
@@ -50,6 +52,7 @@ function zimetSpeli() {
   if (virz == "left") cuskaX -= rut_izm;
   if (virz == "up") cuskaY -= rut_izm;
   if (virz == "down") cuskaY += rut_izm;
+  if (virz == "space") cuskaY == rut_izm;
 
   let jaunaCuskasGalva = {
     x: cuskaX,
