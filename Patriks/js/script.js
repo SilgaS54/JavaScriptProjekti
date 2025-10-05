@@ -55,8 +55,8 @@ function zimetSpeli() {
     }
 
     ctx.fillStyle = "white";
-    ctx.font = "50px Arial";
-    ctx.fillText(punkti, 2.5*rut_izm, 1.7*rut_izm);
+    ctx.font = "40px Arial";
+    ctx.fillText("Punkti: " + punkti, 1*rut_izm, 1.7*rut_izm);
 
     //čūskas galvas koordinātes
     let cuskaX = cuska[0].x;
