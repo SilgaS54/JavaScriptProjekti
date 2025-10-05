@@ -43,9 +43,11 @@ function zimetSpeli() {
         ctx.fillStyle = "red"; //čūskas krāsa
         ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
     }
-
+    //čūskas galvas koordinātes
     let cuskaX = cuska[0].x;
     let cuskaY = cuska[0].y;
+
+    if(cuskaX == ediens.x && cuskaY == ediens.y) console.log("ēdiens apēsts");
 
     cuska.pop();
 
