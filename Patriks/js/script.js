@@ -60,9 +60,9 @@ function zimetSpeli() {
             x: Math.floor(Math.random()*17+1)*rut_izm,// x = no 1 līdz 17 ieskaitot
             y: Math.floor(Math.random()*15+3)*rut_izm // y = no 3 līdz 17 ieskaitot
         };
+    } else {
+        cuska.pop();//noņemt pēdējo elementu no masīva!
     }
-
-    cuska.pop();
 
     if(virz == "right") cuskaX += rut_izm; // tas pats ka cuskaX = cuskaX + rut_izm
     if(virz == "left") cuskaX -= rut_izm;
@@ -74,7 +74,7 @@ function zimetSpeli() {
         y: cuskaY
     }
     
-    cuska.unshift(jaunaCuskasGalva);
+    cuska.unshift(jaunaCuskasGalva);//pieliekām masīvam jauno elementu masīva sākumā
 }
 
 let spele = setInterval(zimetSpeli, 100);
