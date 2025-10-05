@@ -64,7 +64,7 @@ function zimetSpeli() {
         cuska.pop();//noņemt pēdējo elementu no masīva!
     }
 
-    if(cuskaX < rut_izm){
+    if(cuskaX < rut_izm || cuskaY < 3*rut_izm || cuskaX > rut_izm*17 || cuskaY > rut_izm*17){
         clearInterval(spele);
     }
 
