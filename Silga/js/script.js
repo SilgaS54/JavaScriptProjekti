@@ -9,9 +9,11 @@ sp_mango.src = "img/mango.png";
 
 let rut_izm = 32; //rūtiņas izmērs spēles laukumā
 
+let punkti = 0;
+
 let ediens = {
-    x: 9*rut_izm,
-    y: 10*rut_izm
+    x: Math.floor(Math.random()*17+1)*rut_izm,// x = no 1 līdz 17 ieskaitot
+    y: Math.floor(Math.random()*15+3)*rut_izm // y = no 3 līdz 17 ieskaitot
 }
 
 let cuska = []; // definējām MASĪVU čūska, kurš ir tukšs
@@ -25,10 +27,13 @@ document.addEventListener("keydown", virziens);
 let virz;
 
 function virziens(event){
-    if(event.keyCode == 38) virz = "up"
-    if(event.keyCode == 40) virz = "down"
-    if(event.keyCode == 37) virz = "left"
-    if(event.keyCode == 39) virz = "right"
+    //  A UN B (JavaScript sintakse: A && B)- izpildās gan A, gan B vienlaicīgi
+    //  A VAI B (JavaScript sintakse: A || B) - izpildās vismaz viens no A, B nosacījumiem
+    if(event.keyCode == 38 && virz != "down") virz = "up"; // != nozīmē NAV VIENĀDS
+    if(event.keyCode == 40 && virz != "up") virz = "down";
+    if(event.keyCode == 37 && virz != "right") virz = "left";
+    if(event.keyCode == 39 && virz != "left") virz = "right";
+    if(event.keyCode == 32) virz = "stop";
 }
 
 
@@ -41,10 +46,31 @@ function zimetSpeli() {
         ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
     }
 
+    ctx.fillStyle = "white";
+    ctx.font = "50px Arial";
+    ctx.fillText(punkti, 2.5*rut_izm, 1.7*rut_izm);
+
+    //čūskas galvas koordinātes
     let cuskaX = cuska[0].x;
     let cuskaY = cuska[0].y;
 
-    cuska.pop();
+    if(cuskaX == ediens.x && cuskaY == ediens.y) {
+        punkti++;
+        ediens = {
+            x: Math.floor(Math.random()*17+1)*rut_izm,// x = no 1 līdz 17 ieskaitot
+            y: Math.floor(Math.random()*15+3)*rut_izm // y = no 3 līdz 17 ieskaitot
+        };
+    } else {
+        cuska.pop();//noņemt pēdējo elementu no masīva!
+    }
+
+    if(cuskaX < rut_izm || cuskaX > rut_izm*17){
+        clearInterval(spele);
+    }
+
+    if(cuskaY < rut_izm || cuskaY > rut_izm*17){
+        clearInterval(spele);
+    }
 
     if(virz == "right") cuskaX += rut_izm; // tas pats ka cuskaX = cuskaX + rut_izm
     if(virz == "left") cuskaX -= rut_izm;
@@ -56,7 +82,7 @@ function zimetSpeli() {
         y: cuskaY
     }
     
-    cuska.unshift(jaunaCuskasGalva);
+    cuska.unshift(jaunaCuskasGalva);//pieliekām masīvam jauno elementu masīva sākumā
 }
 
 let spele = setInterval(zimetSpeli, 100);
