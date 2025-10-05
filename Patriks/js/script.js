@@ -25,10 +25,13 @@ document.addEventListener("keydown", virziens);
 let virz;
 
 function virziens(event){
-    if(event.keyCode == 38) virz = "up"
-    if(event.keyCode == 40) virz = "down"
-    if(event.keyCode == 37) virz = "left"
-    if(event.keyCode == 39) virz = "right"
+    //  A UN B (JavaScript sintakse: A && B)- izpildās gan A, gan B vienlaicīgi
+    //  A VAI B (JavaScript sintakse: A || B) - izpildās vismaz viens no A, B nosacījumiem
+    if(event.keyCode == 38 && virz != "down") virz = "up"; // != nozīmē NAV VIENĀDS
+    if(event.keyCode == 40 && virz != "up") virz = "down";
+    if(event.keyCode == 37 && virz != "right") virz = "left";
+    if(event.keyCode == 39 && virz != "left") virz = "right";
+    if(event.keyCode == 32) virz = "stop";
 }
 
 
@@ -48,6 +51,8 @@ function zimetSpeli() {
 
     if(virz == "right") cuskaX += rut_izm; // tas pats ka cuskaX = cuskaX + rut_izm
     if(virz == "left") cuskaX -= rut_izm;
+    if(virz == "up") cuskaY -= rut_izm;
+    if(virz == "down") cuskaY += rut_izm;
 
     let jaunaCuskasGalva = {
         x: cuskaX,
