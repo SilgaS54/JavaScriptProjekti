@@ -64,6 +64,10 @@ function zimetSpeli() {
         cuska.pop();//noņemt pēdējo elementu no masīva!
     }
 
+    if(cuskaX < rut_izm){
+        clearInterval(spele);
+    }
+
     if(virz == "right") cuskaX += rut_izm; // tas pats ka cuskaX = cuskaX + rut_izm
     if(virz == "left") cuskaX -= rut_izm;
     if(virz == "up") cuskaY -= rut_izm;
