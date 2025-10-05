@@ -36,6 +36,12 @@ function virziens(event){
     if(event.keyCode == 32) virz = "stop";
 }
 
+function vaiApedaSevi(galva, cuskas_masivs){
+    for(let i = 0; i < cuskas_masivs.length; i++){
+        if(galva.x == cuskas_masivs[i].x && galva.y == cuskas_masivs[i].y) clearInterval(spele);
+    }
+}
+
 
 function zimetSpeli() {
     ctx.drawImage(sp_laukums, 0, 0); //spēles laukums
@@ -79,6 +85,8 @@ function zimetSpeli() {
         x: cuskaX,
         y: cuskaY
     }
+
+    vaiApedaSevi(jaunaCuskasGalva, cuska);
     
     cuska.unshift(jaunaCuskasGalva);//pieliekām masīvam jauno elementu masīva sākumā
 }
