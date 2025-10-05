@@ -37,18 +37,27 @@ function virziens(event) {
   if (event.keyCode == 32) virz = "stop";
 }
 
+function vaiApedaSevi(galva, cuskas_masivs) {
+  for (let i = 0; i < cuskas_masivs.length; i++) {
+    if (galva.x == cuskas_masivs[i].x && galva.y == cuskas_masivs[i].y)
+      clearInterval(spele);
+  }
+}
+
 function zimetSpeli() {
   ctx.drawImage(sp_laukums, 0, 0); //spēles laukums
   ctx.drawImage(sp_mango, ediens.x, ediens.y); //ēdiens
 
   for (let i = 0; i < cuska.length; i++) {
-    ctx.fillStyle = "red"; //čūskas krāsa
+    //ctx.fillStyle = "red"; //čūskas krāsa
+    // a = (nosacījums) ? (ja izpildās) : (ja neizpildās)
+    ctx.fillStyle = i == 0 ? "white" : "blue";
     ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
   }
 
   ctx.fillStyle = "white";
-  ctx.font = "50px Arial";
-  ctx.fillText(punkti, 2.5 * rut_izm, 1.7 * rut_izm);
+  ctx.font = "40px Arial";
+  ctx.fillText("Punkti: " + punkti, 1 * rut_izm, 1.7 * rut_izm);
 
   //čūskas galvas koordinātes
   let cuskaX = cuska[0].x;
@@ -64,7 +73,12 @@ function zimetSpeli() {
     cuska.pop(); //noņemt pēdējo elementu no masīva!
   }
 
-  if (cuskaX < rut_izm || cuskaY < rut_izm) {
+  if (
+    cuskaX < 2 * rut_izm ||
+    cuskaY < 4 * rut_izm ||
+    cuskaX > rut_izm * 16 ||
+    cuskaY > rut_izm * 16
+  ) {
     clearInterval(spele);
   }
 
@@ -72,12 +86,13 @@ function zimetSpeli() {
   if (virz == "left") cuskaX -= rut_izm;
   if (virz == "up") cuskaY -= rut_izm;
   if (virz == "down") cuskaY += rut_izm;
-  if (virz == "space") cuskaY == rut_izm;
 
   let jaunaCuskasGalva = {
     x: cuskaX,
     y: cuskaY,
   };
+
+  vaiApedaSevi(jaunaCuskasGalva, cuska);
 
   cuska.unshift(jaunaCuskasGalva); //pieliekām masīvam jauno elementu masīva sākumā
 }
