@@ -9,6 +9,8 @@ sp_mango.src = "img/mango.png";
 
 let rut_izm = 32; //rūtiņas izmērs spēles laukumā
 
+let punkti = 0;
+
 let ediens = {
     x: 9*rut_izm,
     y: 10*rut_izm
@@ -43,11 +45,16 @@ function zimetSpeli() {
         ctx.fillStyle = "red"; //čūskas krāsa
         ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
     }
+
+    ctx.fillStyle = "white";
+    ctx.font = "50px Arial";
+    ctx.fillText(punkti, 2.5*rut_izm, 1.7*rut_izm);
+
     //čūskas galvas koordinātes
     let cuskaX = cuska[0].x;
     let cuskaY = cuska[0].y;
 
-    if(cuskaX == ediens.x && cuskaY == ediens.y) console.log("ēdiens apēsts");
+    if(cuskaX == ediens.x && cuskaY == ediens.y) punkti++;//console.log("ēdiens apēsts");
 
     cuska.pop();
 
