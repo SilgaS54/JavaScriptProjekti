@@ -42,7 +42,9 @@ function zimetSpeli() {
     ctx.drawImage(sp_mango, ediens.x, ediens.y); //ēdiens
 
     for(let i = 0; i < cuska.length; i++){
-        ctx.fillStyle = "red"; //čūskas krāsa
+        //ctx.fillStyle = "red"; //čūskas krāsa
+        // a = (nosacījums) ? (ja izpildās) : (ja neizpildās)
+        ctx.fillStyle = i == 0 ? "green" : "yellow";
         ctx.fillRect(cuska[i].x, cuska[i].y, rut_izm, rut_izm); //čūska
     }
 
