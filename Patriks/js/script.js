@@ -12,8 +12,8 @@ let rut_izm = 32; //rūtiņas izmērs spēles laukumā
 let punkti = 0;
 
 let ediens = {
-    x: 9*rut_izm,
-    y: 10*rut_izm
+    x: Math.floor(Math.random()*17+1)*rut_izm,// x = no 1 līdz 17 ieskaitot
+    y: Math.floor(Math.random()*15+3)*rut_izm // y = no 3 līdz 17 ieskaitot
 }
 
 let cuska = []; // definējām MASĪVU čūska, kurš ir tukšs
@@ -54,7 +54,13 @@ function zimetSpeli() {
     let cuskaX = cuska[0].x;
     let cuskaY = cuska[0].y;
 
-    if(cuskaX == ediens.x && cuskaY == ediens.y) punkti++;//console.log("ēdiens apēsts");
+    if(cuskaX == ediens.x && cuskaY == ediens.y) {
+        punkti++;
+        ediens = {
+            x: Math.floor(Math.random()*17+1)*rut_izm,// x = no 1 līdz 17 ieskaitot
+            y: Math.floor(Math.random()*15+3)*rut_izm // y = no 3 līdz 17 ieskaitot
+        };
+    }
 
     cuska.pop();
 
