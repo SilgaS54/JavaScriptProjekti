@@ -7,10 +7,27 @@ var map = [
     [0, -100, -100, 90, 0, 0, 200, 200, "violet", 0.5]
 ];
 
+var atrums = 5;
+var pressForward = 0;
+var pressBack = 0;
+var zCoord = 0;
+
+document.addEventListener("keydown", (event) => {
+    if(event.key == "w") pressForward = atrums;
+    if(event.key == "s") pressBack = atrums;
+})
+
+document.addEventListener("keyup", (event) => {
+    if(event.key == "w") pressForward = 0;
+    if(event.key == "s") pressBack = 0;
+})
+
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
-    world.style.transform = `translate3d(0px, 0px, 600px)`;
+    let dz = pressForward - pressBack;
+    zCoord += dz;
+    world.style.transform = `translate3d(0px, 0px, ${zCoord}px)`;
     // world.style.transform = `translateZ(600 - 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px)`;
 }
 
