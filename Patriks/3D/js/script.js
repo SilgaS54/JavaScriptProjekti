@@ -10,7 +10,8 @@ var map = [
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
-
+    world.style.transform = `translate3d(0px, 0px, 600px)`;
+    // world.style.transform = `translateZ(600 - 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(0px, 0px, 0px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
