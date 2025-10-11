@@ -14,10 +14,38 @@
     transform-style: preserve-3d;
 }
 
-#square{
+#square1{ /* aizmurugējais kvadrāts klucītim */
     position: absolute;
     background-color: aquamarine;
+    opacity: 0.5;
     height: 200px;
     width: 200px;
-    transform: translate3d(100px, 100px, -100px) rotateX(0deg) rotateY(70deg) rotateZ(0deg);
+    transform: translate3d(100px, 100px, -200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+#square2{ /* priekšējais kvadrāts klucītim */
+    position: absolute;
+    background-color: blue;
+    opacity: 0.5;
+    height: 200px;
+    width: 200px;
+    transform: translate3d(100px, 100px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}
+
+#square3{ /* sānu kvadrāts klucītim kreisā pusē */
+    position: absolute;
+    background-color: red;
+    opacity: 0.5;
+    height: 200px;
+    width: 200px;
+    transform: translate3d(0px, 100px, -100px) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
+}
+
+#square4{ /* sānu kvadrāts klucītim labā pusē */
+    position: absolute;
+    background-color: green;
+    opacity: 0.5;
+    height: 200px;
+    width: 200px;
+    transform: translate3d(200px, 100px, -100px) rotateX(0deg) rotateY(90deg) rotateZ(0deg);
 }
