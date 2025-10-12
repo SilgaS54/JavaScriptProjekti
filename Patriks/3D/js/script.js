@@ -1,3 +1,13 @@
+class player {
+    constructor(x, y, z, rx, ry) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.rx = rx;
+        this.ry = ry;
+    }
+}
+
 var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //x, y, z, rx, ry, rz, width, height, color, opacity
@@ -12,31 +22,42 @@ var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
 var pressRight = 0;
-var zCoord = 0;
-var xCoord = 0;
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
     if(event.key == "w") pressForward = atrums;
     if(event.key == "s") pressBack = atrums;
     if(event.key == "a") pressLeft = atrums;
     if(event.key == "d") pressRight = atrums;
 })
 
-document.addEventListener("keyup", (event) => {
+document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspiešanu
     if(event.key == "w") pressForward = 0;
     if(event.key == "s") pressBack = 0;
     if(event.key == "a") pressLeft = 0;
     if(event.key == "d") pressRight = 0;
 })
 
+//pēles kustības apstrāde
+
+document.addEventListener("mousemove", (event) => {
+    console.log("X - virziens: "+ event.movementX);
+    console.log("Y - virziens: "+ event.movementY);
+})
+
+// -------------------------
+
+var pawn = new player(0, 0, 0, 0, 0);
+
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
-    let dz = pressForward - pressBack;
     let dx = pressLeft - pressRight;
-    zCoord += dz;
-    xCoord += dx;
-    world.style.transform = `translate3d(${xCoord}px, 0px, ${zCoord}px)`;
+    let dz = pressForward - pressBack;
+
+    pawn.x += dx;
+    pawn.z += dz;
+
+    world.style.transform = `translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
