@@ -29,6 +29,21 @@ var pressRight = 0;
 var mouseX = 0;
 var mouseY = 0;
 
+var lock = false;
+
+var container = document.getElementById("container");
+
+document.addEventListener("pointerlockchange", (event)=>{
+    lock = !lock;
+})
+
+container.onclick = function(){
+    if(!lock){
+        container.requestPointerLock();
+    }
+        
+}
+
 document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
     if(event.key == "w") pressForward = atrums;
     if(event.key == "s") pressBack = atrums;
