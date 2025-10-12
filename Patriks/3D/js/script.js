@@ -63,8 +63,6 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
 document.addEventListener("mousemove", (event) => {
     mouseX = event.movementX;
     mouseY = event.movementY;
-    // console.log("X - virziens: "+ event.movementX);
-    // console.log("Y - virziens: "+ event.movementY);
 })
 
 // -------------------------
@@ -87,9 +85,11 @@ function update(){ // mūsu 3D pasaules izmaiņas
     pawn.x += dx;
     pawn.z += dz;
 
-    pawn.rx += drx;
-    pawn.ry += dry;
-
+    if(lock) {
+        pawn.rx += drx;
+        pawn.ry += dry;
+    }
+    
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
 }
 
