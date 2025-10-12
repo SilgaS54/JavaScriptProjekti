@@ -1,10 +1,10 @@
 var map = [
-    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //x, y, z, rx, ry, rz, width, height, color, opacity
-    // [0, 0, -200, 0, 0, 0, 200, 200, "black", 0.5],
-    // [-100, 0, -100, 0, 90, 0, 200, 200, "orange", 0.5],
-    // [100, 0, -100, 0, 90, 0, 200, 200, "yellow", 0.5],
-    // [0, 100, -100, 90, 0, 0, 200, 200, "blue", 0.5],
-    // [0, -100, -100, 90, 0, 0, 200, 200, "violet", 0.5]
+    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
+    //x, y, z, rx, ry, rz, width, height, color, opacity
+    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena priekšā
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena kreisā pusē
 ];
 
 var atrums = 5;
