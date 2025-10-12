@@ -1,3 +1,7 @@
+//2pi RAD IR 360 DEG
+// 1 DEG radiānos ir 2PI/360 jeb PI/180
+var deg = Math.PI/180;
+
 class player {
     constructor(x, y, z, rx, ry) {
         this.x = x;
@@ -55,11 +59,15 @@ var pawn = new player(0, 0, 0, 0, 0);
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
-    let dx = pressLeft - pressRight;
-    let dz = pressForward - pressBack;
+    //let dx = pressLeft - pressRight;
+    let dx = (pressLeft - pressRight)*Math.cos(pawn.ry*deg) - (pressForward - pressBack)*Math.sin(pawn.ry*deg);
+    //let dz = pressForward - pressBack;
+    let dz = (pressLeft - pressRight)*Math.sin(pawn.ry*deg) + (pressForward - pressBack)*Math.cos(pawn.ry*deg);
 
-    let drx = mouseY;
+    let drx = -mouseY;
     let dry = mouseX;
+
+    mouseX = mouseY = 0;
 
     pawn.x += dx;
     pawn.z += dz;
@@ -67,7 +75,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     pawn.rx += drx;
     pawn.ry += dry;
 
-    world.style.transform = `rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
+    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
