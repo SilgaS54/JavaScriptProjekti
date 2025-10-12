@@ -16,9 +16,12 @@ var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //x, y, z, rx, ry, rz, width, height, color, opacity
     [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena priekšā
-    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena aizmugurē
-    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena kreisā pusē
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1], // siena kreisā pusē
+
+    //siena 2
+   // [0, 0, 0, 0, 0, 0, 1000, 200, "url(textures/wall00.jpg)", 1],
 ];
 
 var atrums = 5;
@@ -67,15 +70,15 @@ document.addEventListener("mousemove", (event) => {
 
 // -------------------------
 
-var pawn = new player(0, 0, 0, 0, 0);
+var pawn = new player(900, 0, 900, 0, 0);
 
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
     //let dx = pressLeft - pressRight;
-    let dx = (pressLeft - pressRight)*Math.cos(pawn.ry*deg) - (pressForward - pressBack)*Math.sin(pawn.ry*deg);
+    let dx = -(pressLeft - pressRight)*Math.cos(pawn.ry*deg) + (pressForward - pressBack)*Math.sin(pawn.ry*deg);
     //let dz = pressForward - pressBack;
-    let dz = (pressLeft - pressRight)*Math.sin(pawn.ry*deg) + (pressForward - pressBack)*Math.cos(pawn.ry*deg);
+    let dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
 
     let drx = -mouseY;
     let dry = mouseX;
@@ -90,7 +93,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
         pawn.ry += dry;
     }
     
-    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
+    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, 0px, ${-pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
