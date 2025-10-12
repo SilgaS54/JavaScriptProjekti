@@ -16,9 +16,14 @@ var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //x, y, z, rx, ry, rz, width, height, color, opacity
     [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena priekšā
-    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena aizmugurē
-    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena kreisā pusē
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1], // siena kreisā pusē
+
+    //siena 2
+    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 ];
 
 var atrums = 5;
@@ -28,6 +33,21 @@ var pressLeft = 0;
 var pressRight = 0;
 var mouseX = 0;
 var mouseY = 0;
+
+var lock = false;
+
+var container = document.getElementById("container");
+
+document.addEventListener("pointerlockchange", (event)=>{
+    lock = !lock;
+})
+
+container.onclick = function(){
+    if(!lock){
+        container.requestPointerLock();
+    }
+        
+}
 
 document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
     if(event.key == "w") pressForward = atrums;
@@ -48,21 +68,19 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
 document.addEventListener("mousemove", (event) => {
     mouseX = event.movementX;
     mouseY = event.movementY;
-    // console.log("X - virziens: "+ event.movementX);
-    // console.log("Y - virziens: "+ event.movementY);
 })
 
 // -------------------------
 
-var pawn = new player(0, 0, 0, 0, 0);
+var pawn = new player(900, 0, 900, 0, 0);
 
 var world = document.getElementById("world");
 
 function update(){ // mūsu 3D pasaules izmaiņas
     //let dx = pressLeft - pressRight;
-    let dx = (pressLeft - pressRight)*Math.cos(pawn.ry*deg) - (pressForward - pressBack)*Math.sin(pawn.ry*deg);
+    let dx = -(pressLeft - pressRight)*Math.cos(pawn.ry*deg) + (pressForward - pressBack)*Math.sin(pawn.ry*deg);
     //let dz = pressForward - pressBack;
-    let dz = (pressLeft - pressRight)*Math.sin(pawn.ry*deg) + (pressForward - pressBack)*Math.cos(pawn.ry*deg);
+    let dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
 
     let drx = -mouseY;
     let dry = mouseX;
@@ -72,10 +90,12 @@ function update(){ // mūsu 3D pasaules izmaiņas
     pawn.x += dx;
     pawn.z += dz;
 
-    pawn.rx += drx;
-    pawn.ry += dry;
-
-    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
+    if(lock) {
+        pawn.rx += drx;
+        pawn.ry += dry;
+    }
+    
+    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, 0px, ${-pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
