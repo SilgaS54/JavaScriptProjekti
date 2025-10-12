@@ -21,7 +21,9 @@ var map = [
     [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1], // siena kreisā pusē
 
     //siena 2
-   // [0, 0, 0, 0, 0, 0, 1000, 200, "url(textures/wall00.jpg)", 1],
+    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 ];
 
 var atrums = 5;
