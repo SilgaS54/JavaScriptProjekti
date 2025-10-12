@@ -61,6 +61,8 @@ function update(){ // mūsu 3D pasaules izmaiņas
     let drx = mouseY;
     let dry = mouseX;
 
+    mouseX = mouseY = 0;
+
     pawn.x += dx;
     pawn.z += dz;
 
