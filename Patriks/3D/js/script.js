@@ -22,6 +22,8 @@ var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
 var pressRight = 0;
+var mouseX = 0;
+var mouseY = 0;
 
 document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
     if(event.key == "w") pressForward = atrums;
@@ -40,8 +42,10 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
 //pēles kustības apstrāde
 
 document.addEventListener("mousemove", (event) => {
-    console.log("X - virziens: "+ event.movementX);
-    console.log("Y - virziens: "+ event.movementY);
+    mouseX = event.movementX;
+    mouseY = event.movementY;
+    // console.log("X - virziens: "+ event.movementX);
+    // console.log("Y - virziens: "+ event.movementY);
 })
 
 // -------------------------
@@ -54,10 +58,16 @@ function update(){ // mūsu 3D pasaules izmaiņas
     let dx = pressLeft - pressRight;
     let dz = pressForward - pressBack;
 
+    let drx = mouseY;
+    let dry = mouseX;
+
     pawn.x += dx;
     pawn.z += dz;
 
-    world.style.transform = `translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
+    pawn.rx += drx;
+    pawn.ry += dry;
+
+    world.style.transform = `rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
