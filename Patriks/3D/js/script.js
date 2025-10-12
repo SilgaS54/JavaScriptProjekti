@@ -64,7 +64,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     //let dz = pressForward - pressBack;
     let dz = (pressLeft - pressRight)*Math.sin(pawn.ry*deg) + (pressForward - pressBack)*Math.cos(pawn.ry*deg);
 
-    let drx = mouseY;
+    let drx = -mouseY;
     let dry = mouseX;
 
     mouseX = mouseY = 0;
@@ -75,7 +75,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     pawn.rx += drx;
     pawn.ry += dry;
 
-    world.style.transform = `rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
+    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${pawn.x}px, 0px, ${pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
