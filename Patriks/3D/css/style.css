@@ -18,3 +18,14 @@
 .square {
     position: absolute;
 }
+
+#pawn {
+    position: absolute;
+    top: 400px;
+    left: 600px;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50px;
+    background-color: bisque;
+}
