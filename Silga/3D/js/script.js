@@ -139,6 +139,10 @@ function update(){ // mūsu 3D pasaules izmaiņas
     if(lock) {
         pawn.rx += drx;
         pawn.ry += dry;
+        
+        // galvas pagriešana
+        if(pawn.rx > 90) pawn.rx = 90;   // augšā
+        if(pawn.rx < -90) pawn.rx = -90; // lejā
     }
     
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, 0px, ${-pawn.z}px)`;
