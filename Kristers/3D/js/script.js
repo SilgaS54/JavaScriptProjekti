@@ -61,9 +61,12 @@ var map = [
   [-650, 0, 10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
   [-650, 0, -10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
   [-300, 0, 0, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 8
+  [0, -100, 0, 90, 0, 0, 2000, 2000, "url(textures/griesti.jpg)", 1], //Griesti
 ];
 
-var atrums = 5;
+var atrums = 3;
 var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
