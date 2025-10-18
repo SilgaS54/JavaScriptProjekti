@@ -20,10 +20,47 @@ var map = [
   [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1], // siena labā pusē
   [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1], // siena kreisā pusē
 
-  //siena 2
+  //siena 1
   [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
   [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
   [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 2
+  [-650, 0, 710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-650, 0, 690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 3
+  [0, 0, 350, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [0, 0, 330, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-500, 0, 340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [500, 0, 340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 4
+  [0, 0, -350, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [0, 0, -330, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-500, 0, -340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [500, 0, -340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 5
+  [500, 0, -710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [500, 0, -690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [0, 0, -700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 5
+  [-650, 0, -710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-650, 0, -690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-300, 0, -700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 6
+  [500, 0, 10, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [500, 0, -10, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [0, 0, 0, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+  //siena 7
+  [-650, 0, 10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-650, 0, -10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+  [-300, 0, 0, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 ];
 
 var atrums = 5;
