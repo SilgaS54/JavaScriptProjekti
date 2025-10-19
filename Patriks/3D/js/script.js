@@ -18,7 +18,7 @@ var map = [
     [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1, 15], // siena priekšā
     [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
     [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1, 20], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1, 25], // siena kreisā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1, 10], // siena kreisā pusē
 
     //siena 1
     [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
@@ -36,6 +36,7 @@ var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
 var pressRight = 0;
+var pressUp = 0;
 var mouseX = 0;
 var mouseY = 0;
 
@@ -59,6 +60,7 @@ document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nosp
     if(event.key == "s") pressBack = atrums;
     if(event.key == "a") pressLeft = atrums;
     if(event.key == "d") pressRight = atrums;
+    if(event.keyCode == 32) pressUp = atrums;
 })
 
 document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspiešanu
@@ -66,6 +68,7 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
     if(event.key == "s") pressBack = 0;
     if(event.key == "a") pressLeft = 0;
     if(event.key == "d") pressRight = 0;
+    if(event.keyCode == 32) pressUp = 0;
 })
 
 //pēles kustības apstrāde
@@ -86,7 +89,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     dx = -(pressLeft - pressRight)*Math.cos(pawn.ry*deg) + (pressForward - pressBack)*Math.sin(pawn.ry*deg);
     //let dz = pressForward - pressBack;
     dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
-    dy = 0;
+    dy = -pressUp;
 
     let drx = -mouseY;
     let dry = mouseX;
@@ -96,6 +99,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     collision(map);
 
     pawn.x += dx;
+    pawn.y += dy;
     pawn.z += dz;
 
     if(lock) {
@@ -105,7 +109,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
         if(pawn.rx < -57) pawn.rx = -57; // lejā
     }
     
-    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, 0px, ${-pawn.z}px)`;
+    world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
 }
 
 function createWorld() { // 3D pasaules izveide
