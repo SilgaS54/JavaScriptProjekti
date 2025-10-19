@@ -9,6 +9,9 @@ class player {
         this.z = z;
         this.rx = rx;
         this.ry = ry;
+        this.vx = 5;//ātrums x virzienā
+        this.vy = 5;//ātrums y (vertikālā virzienā)
+        this.vz = 5;//ātrums z virzienā
     }
 } 
 
@@ -31,7 +34,6 @@ var map = [
     [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
 ];
 
-var atrums = 5;
 var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
@@ -59,11 +61,11 @@ container.onclick = function(){
 }
 
 document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
-    if(event.key == "w") pressForward = atrums;
-    if(event.key == "s") pressBack = atrums;
-    if(event.key == "a") pressLeft = atrums;
-    if(event.key == "d") pressRight = atrums;
-    if(event.keyCode == 32) pressUp = atrums;
+    if(event.key == "w") pressForward = pawn.vz;
+    if(event.key == "s") pressBack = pawn.vz;
+    if(event.key == "a") pressLeft = pawn.vx;
+    if(event.key == "d") pressRight = pawn.vx;
+    if(event.keyCode == 32) pressUp = pawn.vy;
 })
 
 document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspiešanu
