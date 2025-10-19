@@ -39,8 +39,11 @@ var pressRight = 0;
 var pressUp = 0;
 var mouseX = 0;
 var mouseY = 0;
+var dx = dy = dz = 0;
 
 var lock = false;
+var g = 0.1;
+var onGround = false;
 
 var container = document.getElementById("container");
 
@@ -89,7 +92,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     dx = -(pressLeft - pressRight)*Math.cos(pawn.ry*deg) + (pressForward - pressBack)*Math.sin(pawn.ry*deg);
     //let dz = pressForward - pressBack;
     dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
-    dy = -pressUp;
+    dy += g;
 
     let drx = -mouseY;
     let dry = mouseX;
