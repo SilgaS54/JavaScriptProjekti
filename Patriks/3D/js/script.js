@@ -14,21 +14,21 @@ class player {
 
 var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
-    //x, y, z, rx, ry, rz, width, height, color, opacity
-    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1], // siena priekšā
+    //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall00.jpg)", 1, 15], // siena priekšā
     [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
-    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1], // siena kreisā pusē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall02.jpg)", 1, 20], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall03.jpg)", 1, 25], // siena kreisā pusē
 
     //siena 1
-    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
-    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
-    [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
 
     //siena 2
-    [-650, 0, 710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
-    [-650, 0, 690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
-    [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-650, 0, 710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-650, 0, 690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
 ];
 
 var atrums = 5;
@@ -100,8 +100,9 @@ function update(){ // mūsu 3D pasaules izmaiņas
 
     if(lock) {
         pawn.rx += drx;
-        console.log(pawn.rx);
         pawn.ry += dry;
+        if(pawn.rx > 57) pawn.rx = 57;   // augšā
+        if(pawn.rx < -57) pawn.rx = -57; // lejā
     }
     
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, 0px, ${-pawn.z}px)`;
@@ -117,6 +118,7 @@ function createWorld() { // 3D pasaules izveide
         jaunaSiena.style.backgroundImage = map[i][8];
         jaunaSiena.style.opacity = map[i][9];
         jaunaSiena.style.transform = `translate3d(${600 + map[i][0] - map[i][6]/2}px, ${400 + map[i][1] - map[i][7]/2}px, ${map[i][2]}px) rotateX(${map[i][3]}deg) rotateY(${map[i][4]}deg) rotateZ(${map[i][5]}deg)`;
+        if(map[i][10]) jaunaSiena.style.backgroundSize =`${map[i][10]}%`;
         world.append(jaunaSiena);
     }
 }
