@@ -93,6 +93,13 @@ function update(){ // mūsu 3D pasaules izmaiņas
     //let dz = pressForward - pressBack;
     dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
     dy += g;
+    if (onGround) {
+        dy = 0;
+        if(pressUp){
+            dy = -pressUp;
+            onGround = false;
+        }
+    }
 
     let drx = -mouseY;
     let dry = mouseX;
