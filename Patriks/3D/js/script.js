@@ -34,6 +34,11 @@ var map = [
     [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
 ];
 
+var objekti = [
+    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //grīda
+    //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+];
+
 var pressForward = 0;
 var pressBack = 0;
 var pressLeft = 0;
@@ -141,7 +146,7 @@ function createWorld() { // 3D pasaules izveide
 
 function collision(mapObj) {
 
-//  onGround = false;
+  onGround = false;
 
   for(let i=0; i<mapObj.length; i++){
     //spēlētāja koordinātes katra taiststūra koordināšu sistēmā
@@ -212,5 +217,20 @@ function coorReTransform(x3, y3, z3, rxc, ryc, rzc){
   return [x0, y0, z0];
 }
 
+function zimetObjektus(mansObj){
+    for(let i = 0; i < mansObj.length; i++){
+        let jaunsObjekts = document.createElement("div");
+        jaunsObjekts.className = "objekts";
+        jaunsObjekts.id = `objekts${i}`;
+        jaunsObjekts.style.width = `${mansObj[i][6]}px`;
+        jaunsObjekts.style.height = `${mansObj[i][7]}px`;
+        jaunsObjekts.style.backgroundColor = mansObj[i][8];
+        jaunsObjekts.style.transform = `translate3d(${600 + mansObj[i][0] - mansObj[i][6]/2}px, ${400 + mansObj[i][1] - mansObj[i][7]/2}px, ${mansObj[i][2]}px) rotateX(${mansObj[i][3]}deg) rotateY(${mansObj[i][4]}deg) rotateZ(${mansObj[i][5]}deg)`;
+        world.append(jaunsObjekts);
+    }
+    
+}
+
 createWorld();
+zimetObjektus(objekti);
 timerGame = setInterval(update, 10); //atjaunināšanas ātrums ir 10, to var iestatīt citu...
