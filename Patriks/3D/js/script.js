@@ -56,9 +56,11 @@ var dx = dy = dz = 0;
 var lock = false;
 var g = 0.1;
 var onGround = false;
+var punkti = 0;
 
 var container = document.getElementById("container");
 var mansTeksts = document.getElementById("mansTeksts");
+var myH1 = document.createElement("h1");
 
 document.addEventListener("pointerlockchange", (event)=>{
     lock = !lock;
@@ -228,10 +230,9 @@ function coorReTransform(x3, y3, z3, rxc, ryc, rzc){
 }
 
 function zimetObjektus(mansObj){
-    var myH1 = document.createElement("h1");
-    myH1.textContent = "Hello!";
+    myH1.textContent = "Punkti:";
     mansTeksts.appendChild(myH1);
-    
+
     for(let i = 0; i < mansObj.length; i++){
         let jaunsObjekts = document.createElement("div");
         jaunsObjekts.className = "objekts";
@@ -258,6 +259,9 @@ function interact(obj){
     let r = (pawn.x-obj[i][0])**2 + (pawn.y-obj[i][1])**2 + (pawn.z-obj[i][2])**2;
     if(r < (obj[i][6])**2 + (obj[i][7])**2) {
       panemsanasSkana.play();
+      punkti++;
+      myH1.textContent = `Punkti: ${punkti}`;
+      mansTeksts.appendChild(myH1);
       obj[i][0] = 100000;
       obj[i][1] = 100000;
       obj[i][2] = 100000;
