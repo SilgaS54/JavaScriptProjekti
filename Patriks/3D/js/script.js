@@ -36,12 +36,19 @@ var map = [
     [-650, 0, 710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
     [-650, 0, 690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
     [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+    // [300, 80, 0, 90, 0, 0, 100, 100, "url(textures/ieks_siena_1.jpg)", 1], //kāpnes
+    // [300, 40, -100, 90, 0, 0, 100, 100, "url(textures/ieks_siena_1.jpg)", 1],
 ];
 
 var objekti = [
     [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //objekts1
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
     [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1], 
+];
+
+var teleports= [
+  [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 0.3],
 ];
 
 var pressForward = 0;
@@ -139,6 +146,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
  
     rotate(objekti, 0.5);
     interact(objekti);
+    interactTeleport(teleports, objekti);
 }
 
 function createWorld() { // 3D pasaules izveide
@@ -241,6 +249,7 @@ function zimetObjektus(mansObj){
         jaunsObjekts.style.width = `${mansObj[i][6]}px`;
         jaunsObjekts.style.height = `${mansObj[i][7]}px`;
         jaunsObjekts.style.backgroundColor = mansObj[i][8];
+        jaunsObjekts.style.opacity = mansObj[i][9];
         jaunsObjekts.style.transform = `translate3d(${600 + mansObj[i][0] - mansObj[i][6]/2}px, ${400 + mansObj[i][1] - mansObj[i][7]/2}px, ${mansObj[i][2]}px) rotateX(${mansObj[i][3]}deg) rotateY(${mansObj[i][4]}deg) rotateZ(${mansObj[i][5]}deg)`;
         world.append(jaunsObjekts);
     }
@@ -269,6 +278,16 @@ function interact(obj){
   }
 }
 
+function interactTeleport(tel, obj){
+  for(let i = 0; i < tel.length; i++){
+    let r = (pawn.x-tel[i][0])**2 + (pawn.y-tel[i][1])**2 + (pawn.z-tel[i][2])**2;
+    if(r < (tel[i][6]/4)**2 + (tel[i][7]/4)**2){
+      console.log("teleports atrasts");
+    }
+  }
+}
+
 createWorld();
 zimetObjektus(objekti);
+zimetObjektus(teleports);
 timerGame = setInterval(update, 10); //atjaunināšanas ātrums ir 10, to var iestatīt citu...
