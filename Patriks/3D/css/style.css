@@ -19,6 +19,10 @@
     position: absolute;
 }
 
+.objekts {
+    position: absolute;
+}
+
 #pawn {
     position: absolute;
     top: 400px;

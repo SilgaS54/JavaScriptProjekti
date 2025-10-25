@@ -35,8 +35,9 @@ var map = [
 ];
 
 var objekti = [
-    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //grīda
+    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //objekts1
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+    [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1], 
 ];
 
 var pressForward = 0;
@@ -127,6 +128,8 @@ function update(){ // mūsu 3D pasaules izmaiņas
     }
     
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
+
+    rotate(objekti, 0.5);
 }
 
 function createWorld() { // 3D pasaules izveide
@@ -222,6 +225,7 @@ function zimetObjektus(mansObj){
         let jaunsObjekts = document.createElement("div");
         jaunsObjekts.className = "objekts";
         jaunsObjekts.id = `objekts${i}`;
+        // jaunsObjekts.style.position = "absolute";
         jaunsObjekts.style.width = `${mansObj[i][6]}px`;
         jaunsObjekts.style.height = `${mansObj[i][7]}px`;
         jaunsObjekts.style.backgroundColor = mansObj[i][8];
@@ -229,6 +233,13 @@ function zimetObjektus(mansObj){
         world.append(jaunsObjekts);
     }
     
+}
+
+function rotate(objekti, wy){
+  for(let i = 0; i < objekti.length; i++){
+    objekti[i][4] += wy;
+    document.getElementById(`objekts${i}`).style.transform = `translate3d(${600 + objekti[i][0] - objekti[i][6]/2}px, ${400 + objekti[i][1] - objekti[i][7]/2}px, ${objekti[i][2]}px) rotateX(${objekti[i][3]}deg) rotateY(${objekti[i][4]}deg) rotateZ(${objekti[i][5]}deg)`;
+  }
 }
 
 createWorld();
