@@ -130,6 +130,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
 
     rotate(objekti, 0.5);
+    interact(objekti);
 }
 
 function createWorld() { // 3D pasaules izveide
@@ -240,6 +241,10 @@ function rotate(objekti, wy){
     objekti[i][4] += wy;
     document.getElementById(`objekts${i}`).style.transform = `translate3d(${600 + objekti[i][0] - objekti[i][6]/2}px, ${400 + objekti[i][1] - objekti[i][7]/2}px, ${objekti[i][2]}px) rotateX(${objekti[i][3]}deg) rotateY(${objekti[i][4]}deg) rotateZ(${objekti[i][5]}deg)`;
   }
+}
+
+function interact(obj){
+  console.log(`Spēlētāja koorditānes: x=${pawn.x}, y=${pawn.y}, z=${pawn.z}`)
 }
 
 createWorld();
