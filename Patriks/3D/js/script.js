@@ -283,6 +283,11 @@ function interactTeleport(tel, obj){
     let r = (pawn.x-tel[i][0])**2 + (pawn.y-tel[i][1])**2 + (pawn.z-tel[i][2])**2;
     if(r < (tel[i][6]/4)**2 + (tel[i][7]/4)**2){
       console.log("teleports atrasts");
+      if(punkti == obj.length){
+        console.log("teleports strādā!");
+      } else {
+        console.log("teleports netrādā!");
+      }
     }
   }
 }
