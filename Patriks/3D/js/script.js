@@ -58,6 +58,7 @@ var g = 0.1;
 var onGround = false;
 
 var container = document.getElementById("container");
+var mansTeksts = document.getElementById("mansTeksts");
 
 document.addEventListener("pointerlockchange", (event)=>{
     lock = !lock;
@@ -227,6 +228,10 @@ function coorReTransform(x3, y3, z3, rxc, ryc, rzc){
 }
 
 function zimetObjektus(mansObj){
+    var myH1 = document.createElement("h1");
+    myH1.textContent = "Hello!";
+    mansTeksts.appendChild(myH1);
+    
     for(let i = 0; i < mansObj.length; i++){
         let jaunsObjekts = document.createElement("div");
         jaunsObjekts.className = "objekts";

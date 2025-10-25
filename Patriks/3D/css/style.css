@@ -33,3 +33,9 @@
     border-radius: 50px;
     background-color: bisque;
 }
+
+#mansTeksts{
+    position: absolute;
+    color: red;
+    z-index: 1000;
+}
