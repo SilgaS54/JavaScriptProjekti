@@ -244,7 +244,18 @@ function rotate(objekti, wy){
 }
 
 function interact(obj){
-  console.log(`Spēlētāja koorditānes: x=${pawn.x}, y=${pawn.y}, z=${pawn.z}`)
+  console.log(`Spēlētāja koorditānes: x=${pawn.x}, y=${pawn.y}, z=${pawn.z}`);
+  console.log(`Objekta koorditānes: x=${obj[0][0]}, y=${obj[0][1]}, z=${obj[0][2]}`);
+  console.log(`Koordināšu starpība: x=${pawn.x-obj[0][0]}, y=${pawn.y-obj[0][1]}, z=${pawn.z-obj[0][2]}`);
+  console.log(`r = ${(pawn.x-obj[0][0])**2 + (pawn.y-obj[0][1])**2 + (pawn.z-obj[0][2])**2}`);
+  console.log(`objekta platums = ${obj[0][6]}; garums = ${obj[0][7]}`);
+  console.log(`objekta r = ${(obj[0][6])**2 + (obj[0][7])**2}`);
+
+  let r = (pawn.x-obj[0][0])**2 + (pawn.y-obj[0][1])**2 + (pawn.z-obj[0][2])**2;
+  if(r < (obj[0][6])**2 + (obj[0][7])**2) {
+    console.log(`objekts paņemts!`);
+  }
+
 }
 
 createWorld();
