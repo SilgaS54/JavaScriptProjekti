@@ -15,6 +15,10 @@ class player {
     }
 } 
 
+//skaņas
+var panemsanasSkana = new Audio;
+panemsanasSkana.src = "audio/thing.mp3";
+
 var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
@@ -91,7 +95,8 @@ document.addEventListener("mousemove", (event) => {
 
 // -------------------------
 
-var pawn = new player(900, 0, 900, 0, 0);
+// var pawn = new player(900, 0, 900, 0, 0);
+var pawn = new player(90, 0, 90, 0, 0);
 
 var world = document.getElementById("world");
 
@@ -247,6 +252,7 @@ function interact(obj){
   for(let i = 0; i < obj.length; i++){
     let r = (pawn.x-obj[i][0])**2 + (pawn.y-obj[i][1])**2 + (pawn.z-obj[i][2])**2;
     if(r < (obj[i][6])**2 + (obj[i][7])**2) {
+      panemsanasSkana.play();
       obj[i][0] = 100000;
       obj[i][1] = 100000;
       obj[i][2] = 100000;
