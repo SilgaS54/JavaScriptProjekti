@@ -244,20 +244,13 @@ function rotate(objekti, wy){
 }
 
 function interact(obj){
-  // console.log(`Spēlētāja koorditānes: x=${pawn.x}, y=${pawn.y}, z=${pawn.z}`);
-  // console.log(`Objekta koorditānes: x=${obj[0][0]}, y=${obj[0][1]}, z=${obj[0][2]}`);
-  // console.log(`Koordināšu starpība: x=${pawn.x-obj[0][0]}, y=${pawn.y-obj[0][1]}, z=${pawn.z-obj[0][2]}`);
-  // console.log(`r = ${(pawn.x-obj[0][0])**2 + (pawn.y-obj[0][1])**2 + (pawn.z-obj[0][2])**2}`);
-  // console.log(`objekta platums = ${obj[0][6]}; garums = ${obj[0][7]}`);
-  // console.log(`objekta r = ${(obj[0][6])**2 + (obj[0][7])**2}`);
-
-  let r = (pawn.x-obj[0][0])**2 + (pawn.y-obj[0][1])**2 + (pawn.z-obj[0][2])**2;
-  if(r < (obj[0][6])**2 + (obj[0][7])**2) {
-    // console.log(`objekts paņemts!`);
-    obj[0][0] = 100000;
-    obj[0][1] = 100000;
-    obj[0][2] = 100000;
-    // console.log(objekti);  
+  for(let i = 0; i < obj.length; i++){
+    let r = (pawn.x-obj[i][0])**2 + (pawn.y-obj[i][1])**2 + (pawn.z-obj[i][2])**2;
+    if(r < (obj[i][6])**2 + (obj[i][7])**2) {
+      obj[i][0] = 100000;
+      obj[i][1] = 100000;
+      obj[i][2] = 100000;
+    }
   }
 }
 
