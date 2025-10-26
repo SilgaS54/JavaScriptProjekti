@@ -109,9 +109,35 @@ var objekti = [
     [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1], 
 ];
 
+//Silgas objekti
+var objektiSilga = [
+    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //pirmais objekts vidū
+    //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+    [-200, 70, 0, 0, 0, 0, 25, 25, "blue", 1],
+    [-700, 70, -700, 0, 0, 0, 25, 25, "red", 1],
+    [-900, 70, 900, 0, 90, 0, 25, 25, "white", 1],
+    [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1],
+    
+];
+//---------
+
 var teleports= [
   [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 0.3],
 ];
+
+//Silgas kods
+var teleportsSilga= [
+  [-900, 0, -900, 0, 45, 0, 200, 200, "yellow", 0.3],
+];
+//-----
+
+var spelesElementi = [
+  //0. - karte, 1. - objekti, 3. - teleporti
+  [map, objekti, teleports],
+  [mapSilga, objektiSilga, teleportsSilga]
+];
+
+var level = 1;
 
 var pressForward = 0;
 var pressBack = 0;
@@ -191,7 +217,7 @@ function update(){ // mūsu 3D pasaules izmaiņas
 
     mouseX = mouseY = 0;
 
-    collision(map);
+    collision(spelesElementi[level][0]);
 
     pawn.x += dx;
     pawn.y += dy;
@@ -206,9 +232,9 @@ function update(){ // mūsu 3D pasaules izmaiņas
     
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
  
-    rotate(objekti, 0.5);
-    interact(objekti);
-    interactTeleport(teleports, objekti);
+    rotate(spelesElementi[level][1], 0.5);
+    interact(spelesElementi[level][1]);
+    interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
 }
 
 function createWorld(limenis) { // 3D pasaules izveide
@@ -352,6 +378,7 @@ function interactTeleport(tel, obj){
       console.log("teleports atrasts");
       if(punkti == obj.length){
         console.log("teleports strādā!");
+        // level = 1;
       } else {
         console.log("teleports netrādā!");
       }
@@ -359,7 +386,7 @@ function interactTeleport(tel, obj){
   }
 }
 
-createWorld(map);
-zimetObjektus(objekti);
-zimetObjektus(teleports);
+createWorld(spelesElementi[level][0]);
+zimetObjektus(spelesElementi[level][1]);
+zimetObjektus(spelesElementi[level][2]);
 timerGame = setInterval(update, 10); //atjaunināšanas ātrums ir 10, to var iestatīt citu...
