@@ -137,7 +137,7 @@ var spelesElementi = [
   [mapSilga, objektiSilga, teleportsSilga]
 ];
 
-var level = 1;
+var level = 0;
 
 var pressForward = 0;
 var pressBack = 0;
@@ -379,6 +379,16 @@ function interactTeleport(tel, obj){
       if(punkti == obj.length){
         console.log("teleports strādā!");
         // level = 1;
+        level = 1;
+        punkti = 0;
+        world.innerHTML = "";
+        mansTeksts.innerHTML = "";
+        pawn.x = 900;
+        pawn.y = 0;
+        pawn.z = 900;
+        createWorld(spelesElementi[level][0]);
+        zimetObjektus(spelesElementi[level][1]);
+        zimetObjektus(spelesElementi[level][2]);
       } else {
         console.log("teleports netrādā!");
       }
