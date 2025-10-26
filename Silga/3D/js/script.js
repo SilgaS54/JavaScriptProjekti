@@ -83,14 +83,14 @@ var objekti = [
     [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //pirmais objekts vidū
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
     [-200, 70, 0, 0, 0, 0, 25, 25, "blue", 1],
-    [-900, 70, -900, 0, 0, 0, 25, 25, "red", 1],
+    [-700, 70, -700, 0, 0, 0, 25, 25, "red", 1],
     [-900, 70, 900, 0, 90, 0, 25, 25, "white", 1],
     [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1],
     
 ];
 
 var teleports= [
-  [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 0.3],
+  [-900, 0, -900, 0, 45, 0, 200, 200, "yellow", 0.3],
 ];
 
 //var atrums = 5;
@@ -310,7 +310,12 @@ for(let i = 0; i < obj.length; i++){
     if(r < (obj[i][6])**2 + (obj[i][7])**2) {
       panemsanasSkana.play();
       punkti++;
-      myH1.textContent = `Punkti: ${punkti}`;
+      myH1.textContent = `Punkti: ${punkti} no ${obj.length}`;
+      if (punkti == obj.length) {
+        var myH2 = document.createElement("h1");
+        myH2.textContent = "Punkti sakrāti, var doties uz teleportu!"
+        mansTeksts.appendChild(myH2);
+      }
       mansTeksts.appendChild(myH1);
       obj[i][0] = 100000;
       obj[i][1] = 100000;
