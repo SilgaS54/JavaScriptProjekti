@@ -43,12 +43,12 @@ var map = [
 
 //Silgas pasaule
 var mapSilga = [
-    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
+    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/meness.jpg)", 1], //grīda
     //x, y, z, rx, ry, rz, width, height, color, opacity
-    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena priekšā
-    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
-    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena kreisā pusē
+    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena priekšā
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena kreisā pusē
 
     //siena 2
     [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
@@ -102,6 +102,61 @@ var mapSilga = [
 
 ];
 //----
+//Kristera pasaule
+var mapKristers = [
+  [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
+  //x, y, z, rx, ry, rz, width, height, color, opacity
+  [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/walls.jpg)", 1, 10], // siena priekšā
+  [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/walls.jpg)", 1, 10], // siena aizmugurē
+  [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/walls.jpg)", 1, 10], // siena labā pusē
+  [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/walls.jpg)", 1, 10], // siena kreisā pusē
+
+  //siena 1
+  [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 2
+  [-650, 0, 710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-650, 0, 690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-300, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 3
+  [0, 0, 350, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [0, 0, 330, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-500, 0, 340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [500, 0, 340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 4
+  [0, 0, -350, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [0, 0, -330, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-500, 0, -340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+  [500, 0, -340, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 5
+  [500, 0, -710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [500, 0, -690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [0, 0, -700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 5
+  [-650, 0, -710, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-650, 0, -690, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-300, 0, -700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 6
+  [500, 0, 10, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [500, 0, -10, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [0, 0, 0, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 7
+  [-650, 0, 10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-650, 0, -10, 0, 0, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 10],
+  [-300, 0, 0, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1, 100],
+
+  //siena 8
+  [0, -100, 0, 90, 0, 0, 2000, 2000, "url(textures/griesti.jpg)", 1, 10], //Griesti
+];
+//
 
 var objekti = [
     [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //objekts1
@@ -120,6 +175,22 @@ var objektiSilga = [
     
 ];
 //---------
+// Kristera objekti
+var objektiKristers = [
+  [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1], //grīda
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+
+  [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1], //grīda
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+
+  [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1], //grīda
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+
+  [600, -25, 340, 0, 0, 0, 25, 25, "white", 1], //grīda
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+];
+//-------------
+
 
 var teleports= [
   [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 0.3],
@@ -131,13 +202,20 @@ var teleportsSilga= [
 ];
 //-----
 
+//Kristera teleports
+var teleportsKristers= [
+  [-800, 0, 800, 0, 45, 0, 200, 200, "yellow", 0.3],
+];
+//-----------
+
 var spelesElementi = [
   //0. - karte, 1. - objekti, 3. - teleporti
   [map, objekti, teleports],
-  [mapSilga, objektiSilga, teleportsSilga]
+  [mapSilga, objektiSilga, teleportsSilga],
+  [mapKristers, objektiKristers, teleportsKristers]
 ];
 
-var level = 0;
+var level = 2;
 
 var pressForward = 0;
 var pressBack = 0;
