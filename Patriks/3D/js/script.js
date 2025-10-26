@@ -264,6 +264,7 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
     if(event.key == "a") pressLeft = 0;
     if(event.key == "d") pressRight = 0;
     if(event.keyCode == 32) pressUp = 0;
+    soluSkana.pause();
 })
 
 //pēles kustības apstrāde
