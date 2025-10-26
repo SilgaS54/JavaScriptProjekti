@@ -19,6 +19,9 @@ class player {
 var panemsanasSkana = new Audio;
 panemsanasSkana.src = "audio/thing.mp3";
 
+var soluSkana = new Audio;
+soluSkana.src = "audio/walking.mp3";
+
 var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
@@ -252,6 +255,7 @@ document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nosp
     if(event.key == "a") pressLeft = pawn.vx;
     if(event.key == "d") pressRight = pawn.vx;
     if(event.keyCode == 32) pressUp = pawn.vy;
+    soluSkana.play();
 })
 
 document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspiešanu
