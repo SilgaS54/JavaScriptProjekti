@@ -455,9 +455,14 @@ function interactTeleport(tel, obj){
     if(r < (tel[i][6]/4)**2 + (tel[i][7]/4)**2){
       console.log("teleports atrasts");
       if(punkti == obj.length){
-        console.log("teleports strādā!");
-        // level = 1;
-        level = 1;
+        level++;
+        if(level == spelesElementi.length){
+          mansTeksts.innerHTML = "";
+          myH1.textContent = "Spēle ir pabeigta, visi līmeņi ir izieti, nospied ESC lai izietu!";
+          mansTeksts.appendChild(myH1);
+          clearInterval(timerGame);
+          break;
+        }
         punkti = 0;
         world.innerHTML = "";
         mansTeksts.innerHTML = "";
