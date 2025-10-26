@@ -41,6 +41,68 @@ var map = [
     // [300, 40, -100, 90, 0, 0, 100, 100, "url(textures/ieks_siena_1.jpg)", 1],
 ];
 
+//Silgas pasaule
+var mapSilga = [
+    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
+    //x, y, z, rx, ry, rz, width, height, color, opacity
+    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena priekšā
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01.jpg)", 1], // siena kreisā pusē
+
+    //siena 2
+    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 3
+    [-700, 0, 710, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-700, 0, 690, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-400, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 4
+    [0, 0, 80, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [0, 0, 100, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-500, 0, 90, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 90, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 5
+    [-750, 0, -100, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-750, 0, -120, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-500, 0, -110, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    
+    //siena 6
+    [-760, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-740, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-750, 0, -300, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 7
+    [-100, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-80, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-90, 0, -720, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 8
+    [600, 0, -320, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [600, 0, -340, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [200, 0, -330, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+    //siena 9
+    [350, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [330, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    
+    //siena 10
+    [530, 0, -790, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [530, 0, -770, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    
+    //siena 11
+    [730, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [710, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [720, 0, -490, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
+
+
+];
+//----
+
 var objekti = [
     [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //objekts1
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
@@ -149,17 +211,17 @@ function update(){ // mūsu 3D pasaules izmaiņas
     interactTeleport(teleports, objekti);
 }
 
-function createWorld() { // 3D pasaules izveide
-    for(let i = 0; i < map.length; i++){
+function createWorld(limenis) { // 3D pasaules izveide
+    for(let i = 0; i < limenis.length; i++){
         let jaunaSiena = document.createElement("div");
         jaunaSiena.className = "square";
         jaunaSiena.id = `square${i}`;
-        jaunaSiena.style.width = `${map[i][6]}px`;
-        jaunaSiena.style.height = `${map[i][7]}px`;
-        jaunaSiena.style.backgroundImage = map[i][8];
-        jaunaSiena.style.opacity = map[i][9];
-        jaunaSiena.style.transform = `translate3d(${600 + map[i][0] - map[i][6]/2}px, ${400 + map[i][1] - map[i][7]/2}px, ${map[i][2]}px) rotateX(${map[i][3]}deg) rotateY(${map[i][4]}deg) rotateZ(${map[i][5]}deg)`;
-        if(map[i][10]) jaunaSiena.style.backgroundSize =`${map[i][10]}%`;
+        jaunaSiena.style.width = `${limenis[i][6]}px`;
+        jaunaSiena.style.height = `${limenis[i][7]}px`;
+        jaunaSiena.style.backgroundImage = limenis[i][8];
+        jaunaSiena.style.opacity = limenis[i][9];
+        jaunaSiena.style.transform = `translate3d(${600 + limenis[i][0] - limenis[i][6]/2}px, ${400 + limenis[i][1] - limenis[i][7]/2}px, ${limenis[i][2]}px) rotateX(${limenis[i][3]}deg) rotateY(${limenis[i][4]}deg) rotateZ(${limenis[i][5]}deg)`;
+        if(limenis[i][10]) jaunaSiena.style.backgroundSize =`${limenis[i][10]}%`;
         world.append(jaunaSiena);
     }
 }
@@ -269,7 +331,12 @@ function interact(obj){
     if(r < (obj[i][6])**2 + (obj[i][7])**2) {
       panemsanasSkana.play();
       punkti++;
-      myH1.textContent = `Punkti: ${punkti}`;
+      myH1.textContent = `Punkti: ${punkti} no ${obj.length}`;
+      if (punkti == obj.length) {
+        var myH2 = document.createElement("h1");
+        myH2.textContent = "Punkti sakrāti, var doties uz teleportu!"
+        mansTeksts.appendChild(myH2);
+      }
       mansTeksts.appendChild(myH1);
       obj[i][0] = 100000;
       obj[i][1] = 100000;
@@ -292,7 +359,7 @@ function interactTeleport(tel, obj){
   }
 }
 
-createWorld();
+createWorld(map);
 zimetObjektus(objekti);
 zimetObjektus(teleports);
 timerGame = setInterval(update, 10); //atjaunināšanas ātrums ir 10, to var iestatīt citu...
