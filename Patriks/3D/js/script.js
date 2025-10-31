@@ -218,7 +218,7 @@ var spelesElementi = [
   [mapKristers, objektiKristers, teleportsKristers]
 ];
 
-var level = 2;
+var level = 0;
 
 var pressForward = 0;
 var pressBack = 0;
