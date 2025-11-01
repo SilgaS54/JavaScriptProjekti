@@ -39,3 +39,41 @@
     color: red;
     z-index: 1000;
 }
+
+.menu{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: aquamarine;
+    /* opacity: 0.7; */
+}
+
+.button{
+    margin: 0px;
+    position: absolute;
+    width: 900px;
+    height: 250px;
+    background-color: aliceblue;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: antiquewhite;
+}
+
+#buttonStart{
+    top: 450px;
+    left: 150px;
+}
+
+p{
+    margin: 0px;
+    font-size: 60px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    
+}
