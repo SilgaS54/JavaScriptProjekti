@@ -22,6 +22,12 @@ panemsanasSkana.src = "audio/thing.mp3";
 var soluSkana = new Audio;
 soluSkana.src = "audio/walking.mp3";
 
+var kludasSkana = new Audio;
+kludasSkana.src = "audio/mistake.mp3"
+
+var teleportaSkana = new Audio;
+teleportaSkana.src = "audio/win.mp3"
+
 var map = [
     [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/grass.jpg)", 1], //grīda
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
@@ -461,6 +467,7 @@ function interactTeleport(tel, obj){
       console.log("teleports atrasts");
       if(punkti == obj.length){
         level++;
+        teleportaSkana.play();
         if(level == spelesElementi.length){
           mansTeksts.innerHTML = "";
           myH1.textContent = "Spēle ir pabeigta, visi līmeņi ir izieti, nospied ESC lai izietu!";
@@ -478,7 +485,7 @@ function interactTeleport(tel, obj){
         zimetObjektus(spelesElementi[level][1]);
         zimetObjektus(spelesElementi[level][2]);
       } else {
-        console.log("teleports netrādā!");
+        kludasSkana.play();
       }
     }
   }
