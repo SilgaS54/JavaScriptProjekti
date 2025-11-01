@@ -45,7 +45,7 @@
   width: inherit;
   height: inherit;
   background-color: aquamarine;
-  /* opacity: 0.7; */
+  opacity: 1;
 }
 
 .button {
@@ -74,5 +74,5 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  user-select: none;
+  /* user-select: none; */
 }
