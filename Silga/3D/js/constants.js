@@ -5,3 +5,5 @@ var deg = Math.PI/180;
 var level = 0;
 var g = 0.1;
 var onGround = false;
+
+var canlock = false;
