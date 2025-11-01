@@ -22,6 +22,7 @@
 .objekts {
     position: absolute;
 }
+
 #pawn {
     position: absolute;
     top: 400px;
@@ -37,4 +38,42 @@
     position: absolute;
     color: red;
     z-index: 1000;
+}
+
+.menu{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: rgb(216, 14, 199);
+    /* opacity: 0.7; */
+}
+
+.button{
+    margin: 0px;
+    position: absolute;
+    width: 900px;
+    height: 250px;
+    background-color: rebeccapurple;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: red;
+}
+
+#buttonStart{
+    top: 450px;
+    left: 150px;
+}
+
+p{
+    margin: 0px;
+    font-size: 60px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    
 }
