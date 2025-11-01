@@ -5,7 +5,7 @@ document.addEventListener("pointerlockchange", (event)=>{
 })
 
 container.onclick = function(){
-    if(!lock){
+    if(!lock && canlock){
         container.requestPointerLock();
     }
         
