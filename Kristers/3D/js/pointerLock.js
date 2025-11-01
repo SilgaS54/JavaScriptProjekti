@@ -1,12 +1,11 @@
 var lock = false;
 
-document.addEventListener("pointerlockchange", (event)=>{
-    lock = !lock;
-})
+document.addEventListener("pointerlockchange", (event) => {
+  lock = !lock;
+});
 
-container.onclick = function(){
-    if(!lock){
-        container.requestPointerLock();
-    }
-        
-}
+container.onclick = function () {
+  if (!lock && canlock) {
+    container.requestPointerLock();
+  }
+};
