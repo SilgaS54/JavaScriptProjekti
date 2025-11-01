@@ -1,41 +1,78 @@
 /* CSS */
 #container {
-    position: absolute;
-    width: 1200px;
-    height: 800px;
-    border: 2px solid #000000;
-    perspective: 600px;
-    overflow: hidden;
+  position: absolute;
+  width: 1200px;
+  height: 800px;
+  border: 2px solid #000000;
+  perspective: 600px;
+  overflow: hidden;
 }
 
 #world {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    transform-style: preserve-3d;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
 }
 
 .square {
-    position: absolute;
+  position: absolute;
 }
 
 .objekts {
-    position: absolute;
+  position: absolute;
 }
 
 #pawn {
-    position: absolute;
-    top: 400px;
-    left: 600px;
-    transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
-    border-radius: 50px;
-    background-color: bisque;
+  position: absolute;
+  top: 400px;
+  left: 600px;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: bisque;
 }
 
-#mansTeksts{
-    position: absolute;
-    color: red;
-    z-index: 1000;
+#mansTeksts {
+  position: absolute;
+  color: red;
+  z-index: 1000;
+}
+
+.menu {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: aquamarine;
+  /* opacity: 0.7; */
+}
+
+.button {
+  margin: 0px;
+  position: absolute;
+  width: 900px;
+  height: 250px;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: antiquewhite;
+}
+
+#buttonStart {
+  top: 450px;
+  left: 150px;
+}
+
+p {
+  margin: 0px;
+  font-size: 60px;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
 }
