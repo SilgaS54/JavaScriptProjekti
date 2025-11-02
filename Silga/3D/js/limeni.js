@@ -22,60 +22,60 @@ var map = [
 
 //Silgas pasaule
 var mapSilga = [
-    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/meness.jpg)", 1, 25], //grīda
+    [0, 100, 0, 90, 0, 0, 2000, 2000, "url(textures/meness.jpg)", 1], //grīda
     //x, y, z, rx, ry, rz, width, height, color, opacity
-    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1, 25], // siena priekšā
-    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1, 25], // siena aizmugurē
-    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1, 25], // siena labā pusē
-    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1, 25] // siena kreisā pusē
+    [0, 0, -1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena priekšā
+    [0, 0, 1000, 0, 0, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena aizmugurē
+    [1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena labā pusē
+    [-1000, 0, 0, 0, 90, 0, 2000, 200, "url(textures/wall01s.jpg)", 1], // siena kreisā pusē
 
     //siena 2
-    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [500, 0, 710, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [500, 0, 690, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [0, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 3
-    [-700, 0, 710, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [-700, 0, 690, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-700, 0, 710, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-700, 0, 690, 0, 0, 0, 600, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [-400, 0, 700, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 4
-    [0, 0, 80, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [0, 0, 100, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [0, 0, 80, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [0, 0, 100, 0, 0, 0, 1000, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [-500, 0, 90, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [500, 0, 90, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 5
-    [-750, 0, -100, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [-750, 0, -120, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-750, 0, -100, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-750, 0, -120, 0, 0, 0, 500, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [-500, 0, -110, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
     
     //siena 6
-    [-760, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [-740, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-760, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-740, 0, -650, 0, 90, 0, 700, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [-750, 0, -300, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 7
-    [-100, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [-80, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [-100, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [-80, 0, -320, 0, 90, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [-90, 0, -720, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 8
-    [600, 0, -320, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [600, 0, -340, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [600, 0, -320, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [600, 0, -340, 0, 0, 0, 800, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [200, 0, -330, 0, 90, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
     //siena 9
-    [350, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [330, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [350, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [330, 0, -565, 0, 90, 0, 450, 200, "url(textures/ieks_siena_1.jpg)", 1],
     
     //siena 10
-    [530, 0, -790, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [530, 0, -770, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [530, 0, -790, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [530, 0, -770, 0, 0, 0, 400, 200, "url(textures/ieks_siena_1.jpg)", 1],
     
     //siena 11
-    [730, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
-    [710, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1, 25],
+    [730, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1],
+    [710, 0, -640, 0, 90, 0, 300, 200, "url(textures/ieks_siena_1.jpg)", 1],
     [720, 0, -490, 0, 0, 0, 20, 200, "url(textures/ieks_siena_1.jpg)", 1],
 
 
