@@ -12,8 +12,8 @@ buttonStart.onclick = function(){
   menuStart.style.display = "none";
   canlock = true;
   createWorld(spelesElementi[level][0]);
-  zimetObjektus(spelesElementi[level][1]);
-  zimetObjektus(spelesElementi[level][2]);
+  zimetObjektus(spelesElementi[level][1], `objekts`);
+  zimetObjektus(spelesElementi[level][2], `teleports`);
   timerGame = setInterval(update, 10);
 }
 

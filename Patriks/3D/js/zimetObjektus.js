@@ -1,11 +1,11 @@
-function zimetObjektus(mansObj){
+function zimetObjektus(mansObj, name){
     myH1.textContent = "Punkti:";
     mansTeksts.appendChild(myH1);
 
     for(let i = 0; i < mansObj.length; i++){
         let jaunsObjekts = document.createElement("div");
         jaunsObjekts.className = "objekts";
-        jaunsObjekts.id = `objekts${i}`;
+        jaunsObjekts.id = `${name}${i}`;
         // jaunsObjekts.style.position = "absolute";
         jaunsObjekts.style.width = `${mansObj[i][6]}px`;
         jaunsObjekts.style.height = `${mansObj[i][7]}px`;
