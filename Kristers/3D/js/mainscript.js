@@ -11,9 +11,10 @@ var pawn = new player(90, 0, 90, 0, 0);
 buttonStart.onclick = function () {
   menuStart.style.display = "none";
   canlock = true;
+  world.innerHTML = "";
   createWorld(spelesElementi[level][0]);
-  zimetObjektus(spelesElementi[level][1]);
-  zimetObjektus(spelesElementi[level][2]);
+  zimetObjektus(spelesElementi[level][1], `objekts`);
+  zimetObjektus(spelesElementi[level][2], `teleports`);
   timerGame = setInterval(update, 10);
 };
 
@@ -21,8 +22,9 @@ buttonLimenis.onclick = function () {
   menuStart.style.display = "none";
   canlock = true;
   level = 1;
+  world.innerHTML = "";
   createWorld(spelesElementi[level][0]);
-  zimetObjektus(spelesElementi[level][1]);
-  zimetObjektus(spelesElementi[level][2]);
+  zimetObjektus(spelesElementi[level][1], `objekts`);
+  zimetObjektus(spelesElementi[level][2], `teleports`);
   timerGame = setInterval(update, 10);
 };
