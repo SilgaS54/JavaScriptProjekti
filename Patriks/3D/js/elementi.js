@@ -6,3 +6,4 @@ var world = document.getElementById("world");
 
 var menuStart = document.getElementById("menuStart");
 var buttonStart = document.getElementById("buttonStart");
+var buttonLimenis = document.getElementById("buttonLimenis");
