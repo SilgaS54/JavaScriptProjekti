@@ -6,10 +6,23 @@ var spelesElementi = [
 ];
 
 var punkti = 0;
-
 var pawn = new player(90, 0, 90, 0, 0);
 
-createWorld(spelesElementi[level][0]);
-zimetObjektus(spelesElementi[level][1]);
-zimetObjektus(spelesElementi[level][2]);
-timerGame = setInterval(update, 10); //atjaunināšanas ātrums ir 10, to var iestatīt citu...
+buttonStart.onclick = function(){
+  menuStart.style.display = "none";
+  canlock = true;
+  createWorld(spelesElementi[level][0]);
+  zimetObjektus(spelesElementi[level][1]);
+  zimetObjektus(spelesElementi[level][2]);
+  timerGame = setInterval(update, 10);
+}
+
+buttonLimenis.onclick = function(){
+  menuStart.style.display = "none";
+  canlock = true;
+  level = 1;
+  createWorld(spelesElementi[level][0]);
+  zimetObjektus(spelesElementi[level][1]);
+  zimetObjektus(spelesElementi[level][2]);
+  timerGame = setInterval(update, 10);
+}

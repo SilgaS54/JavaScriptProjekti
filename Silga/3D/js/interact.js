@@ -15,5 +15,13 @@ function interact(obj){
       obj[i][1] = 100000;
       obj[i][2] = 100000;
     }
+    if(i == 0){
+      // console.log(`${obj[i]}`);
+      var mobj = document.getElementById("objekts0");
+      var rect = mobj.getBoundingClientRect();
+      //console.log(`${rect.x} ${rect.y} ${rect.z} ${rect.width} ${rect.height}`);
+      // console.log(`${coorReTransform(obj[i][0], obj[i][1], obj[i][2], pawn.rx, pawn.ry, pawn.rz)}`);
+      // console.log(`${coorTransform(obj[i][0], obj[i][1], obj[i][2], pawn.rx, pawn.ry, pawn.rz)}`);
+    }
   }
 }

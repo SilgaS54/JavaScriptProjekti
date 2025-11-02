@@ -12,7 +12,7 @@ document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nosp
     if(event.key == "a") pressLeft = pawn.vx;
     if(event.key == "d") pressRight = pawn.vx;
     if(event.keyCode == 32) pressUp = pawn.vy;
-    soluSkana.play();
+    // soluSkana.play();
 })
 
 document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspiešanu
@@ -21,7 +21,7 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
     if(event.key == "a") pressLeft = 0;
     if(event.key == "d") pressRight = 0;
     if(event.keyCode == 32) pressUp = 0;
-    soluSkana.pause();
+    // soluSkana.pause();
 })
 
 //pēles kustības apstrāde
