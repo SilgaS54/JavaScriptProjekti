@@ -42,7 +42,6 @@ function update() {
   }deg) rotateY(${
     pawn.ry
   }deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
-  console.log(`limenis = ${level}`);
   rotate(spelesElementi[level][1], 0.5);
   interact(spelesElementi[level][1]);
   interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
