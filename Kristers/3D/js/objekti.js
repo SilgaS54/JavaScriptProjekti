@@ -16,16 +16,18 @@ var objektiSilga = [
 //---------
 // Kristera objekti
 var objektiKristers = [
-  [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"], //grīda
+  [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"],
   //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
-
-  [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"], //grīda
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
-
-  [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"], //grīda
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
-
-  [600, -25, 340, 0, 0, 0, 25, 25, "white", 1, "url(textures/cookies.png)"], //grīda
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"],
+  [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"],
+  [600, -25, 340, 0, 0, 0, 25, 25, "white", 1, "url(textures/cookies.png)"],
 ];
 //-------------
+// Extra objekti
+var objektiExtra = [
+  [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"],
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"],
+  [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"],
+  [600, -25, 340, 0, 0, 0, 25, 25, "white", 1, "url(textures/cookies.png)"],
+];
