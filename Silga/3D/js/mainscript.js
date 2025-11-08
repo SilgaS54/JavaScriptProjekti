@@ -2,7 +2,8 @@ var spelesElementi = [
   //0. - karte, 1. - objekti, 3. - teleporti
   [map, objekti, teleports],
   [mapSilga, objektiSilga, teleportsSilga],
-  [mapKristers, objektiKristers, teleportsKristers]
+  [mapKristers, objektiKristers, teleportsKristers],
+  [mapSS, objektiSS, teleportsSS],
 ];
 
 var punkti = 0;
