@@ -5,6 +5,7 @@ var pressRight = 0;
 var pressUp = 0;
 var mouseX = 0;
 var mouseY = 0;
+var shoot = 0; 
 
 document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nospiešanu
     if(event.key == "w") pressForward = pawn.vz;
@@ -12,6 +13,7 @@ document.addEventListener("keydown", (event) => { //reģistrējam taustiņu nosp
     if(event.key == "a") pressLeft = pawn.vx;
     if(event.key == "d") pressRight = pawn.vx;
     if(event.keyCode == 32) pressUp = pawn.vy;
+    if(event.key == "q") shoot = 1;
     // soluSkana.play();
 })
 
@@ -21,6 +23,7 @@ document.addEventListener("keyup", (event) => { //reģistrējam taustiņu atspie
     if(event.key == "a") pressLeft = 0;
     if(event.key == "d") pressRight = 0;
     if(event.keyCode == 32) pressUp = 0;
+    if(event.key == "q") shoot = 0;
     // soluSkana.pause();
 })
 

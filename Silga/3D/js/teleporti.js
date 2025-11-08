@@ -18,7 +18,7 @@ var teleports= [
 
 //Silgas kods
 var teleportsSilga= [
-  [-900, 0, -900, 0, 45, 0, 200, 200, "yellow", 1, "url(textures/teleport2.gif)"],
+  [-400, 0, -700, 0, -45, 0, 200, 200, "yellow", 1, "url(textures/teleport2.gif)"],
 ];
 //2. līmenis
 
@@ -27,3 +27,8 @@ var teleportsKristers= [
   [-800, 0, 800, 0, 45, 0, 200, 200, "yellow", 0.3],
 ];
 //3. līmenis
+
+//Silgas2 kods
+var teleportsSS= [
+  [-900, 0, -900, 0, 45, 0, 200, 200, "yellow", 1, "url(textures/teleport2.gif)"],
+];
