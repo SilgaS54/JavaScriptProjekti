@@ -39,7 +39,6 @@ function interact(obj) {
           mansTeksts.appendChild(myH2);
         }
         mansTeksts.appendChild(myH1);
-        console.log("object HIT!");
         obj[j][0] = 100000;
         obj[j][1] = 100000;
         obj[j][2] = 100000;
