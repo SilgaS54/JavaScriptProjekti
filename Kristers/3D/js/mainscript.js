@@ -22,7 +22,7 @@ buttonStart.onclick = function () {
 buttonLimenis.onclick = function () {
   menuStart.style.display = "none";
   canlock = true;
-  level = 1;
+  level = 3;
   world.innerHTML = "";
   createWorld(spelesElementi[level][0]);
   zimetObjektus(spelesElementi[level][1], `objekts`);
