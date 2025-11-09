@@ -18,6 +18,8 @@ function interact(obj) {
   }
 
   document.onclick = function () {
+    
+    move(lode, 10);
     for (let j = 0; j < obj.length; j++) {
       var mobj = document.getElementById(`objekts${j}`);
       var rect = mobj.getBoundingClientRect();
