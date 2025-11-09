@@ -6,17 +6,16 @@ var objekti = [
 
 //Silgas objekti
 var objektiSilga = [
-    [50, 70, 50, 0, 0, 0, 25, 25, "yellow", 1],
-    [50, 70, -50, 0, 0, 0, 25, 25, "yellow", 1],
-    [-50, 70, -50, 0, 0, 0, 25, 25, "yellow", 1],
-    [-50, 70, 50, 0, 0, 0, 25, 25, "yellow", 1], // objekts vidū
+    [50, 70, 50, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/money.png)"],
+    [50, 70, -50, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/money.png)"],
+    [-50, 70, -50, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/money.png)"],
+    [-50, 70, 50, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/money.png)"], // objekts vidū
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
-    [-600, 70, 600, 0, 0, 0, 25, 25,"blue", 1],
-    [-600, 70, -600, 0, 0, 0, 25, 25, "red", 1],
-    [600, 70, 600, 0, 0, 0, 25, 25, "white", 1],
-    [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1],
-    
-];
+    [-600, 70, 600, 0, 0, 0, 25, 25,"blue", 1, "url(textures/money.png)"],
+    [-600, 70, -600, 0, 0, 0, 25, 25, "red", 1, "url(textures/money.png)"],
+    [600, 70, 600, 0, 0, 0, 25, 25, "white", 1, "url(textures/money.png)"],
+    [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1, "url(textures/money.png)"],
+]
 //---------
 // Kristera objekti
 var objektiKristers = [
