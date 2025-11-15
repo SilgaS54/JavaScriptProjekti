@@ -32,12 +32,13 @@ function update() { // mūsu 3D pasaules izmaiņas
         if (pawn.rx < -57) pawn.rx = -57; // lejā
     }
 
-    lode.style.transform = `translate3d(${600 + pawn.x - 2 / 2}px, ${400 + pawn.y - 2 / 2}px, ${pawn.z - 10 - lode_z}px)`;
-    lode_z++;
-    if (lode_z == 100) {
-        lode_z = 0;
-        lode.style.display = "none";
-    }
+    lode.style.transform = `translate3d(${600 + lode_x - 200 / 2}px, ${400 + lode_y - 200 / 2}px, ${lode_z - 100}px)`;
+    
+    // lode_z += 0.1;
+    // if (lode_z == 100) {
+    //     lode_z = 0;
+    //     lode.style.display = "none";
+    // }
 
 
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;

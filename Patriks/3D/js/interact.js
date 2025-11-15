@@ -20,7 +20,12 @@ function interact(obj) {
   document.onclick = function () {
     console.log("click");
     lode.style.display = "block";
-    lode_z = 0;
+    lode_x = pawn.x;
+    lode_y = pawn.y;
+    lode_z = pawn.z;
+    lode_rx = pawn.rx;
+    lode_ry = pawn.ry;
+    lode_move = 0;
     // let lode1 = document.createElement("div");
     // lode1.id = `lode${lode_daudzums}`;
     // for(let i = 0; i < 500; i++){
