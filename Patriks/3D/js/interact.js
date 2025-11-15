@@ -18,8 +18,19 @@ function interact(obj) {
   }
 
   document.onclick = function () {
-    
-    move(lode, 10);
+    console.log("click");
+    lode.style.display = "block";
+    lode_z = 0;
+    // let lode1 = document.createElement("div");
+    // lode1.id = `lode${lode_daudzums}`;
+    // for(let i = 0; i < 500; i++){
+    //   lode1.style.transform = `translate3d(${600 + player.x - 20 / 2}px, ${400 + player.y - 20 / 2}px, ${player.z - i}px)`; 
+    //    console.log("LODE1");
+    // }
+    // world.appendChild(lode1);
+    // lode_daudzums++;
+
+    // move(lode, 105);
     for (let j = 0; j < obj.length; j++) {
       var mobj = document.getElementById(`objekts${j}`);
       var rect = mobj.getBoundingClientRect();

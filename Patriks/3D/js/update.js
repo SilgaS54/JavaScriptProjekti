@@ -1,14 +1,14 @@
 var dx = dy = dz = 0;
 
-function update(){ // mūsu 3D pasaules izmaiņas
+function update() { // mūsu 3D pasaules izmaiņas
     //let dx = pressLeft - pressRight;
-    dx = -(pressLeft - pressRight)*Math.cos(pawn.ry*deg) + (pressForward - pressBack)*Math.sin(pawn.ry*deg);
+    dx = -(pressLeft - pressRight) * Math.cos(pawn.ry * deg) + (pressForward - pressBack) * Math.sin(pawn.ry * deg);
     //let dz = pressForward - pressBack;
-    dz = -(pressLeft - pressRight)*Math.sin(pawn.ry*deg) - (pressForward - pressBack)*Math.cos(pawn.ry*deg);
+    dz = -(pressLeft - pressRight) * Math.sin(pawn.ry * deg) - (pressForward - pressBack) * Math.cos(pawn.ry * deg);
     dy += g;
     if (onGround) {
         dy = 0;
-        if(pressUp){
+        if (pressUp) {
             dy = -pressUp;
             onGround = false;
         }
@@ -25,15 +25,24 @@ function update(){ // mūsu 3D pasaules izmaiņas
     pawn.y += dy;
     pawn.z += dz;
 
-    if(lock) {
+    if (lock) {
         pawn.rx += drx;
         pawn.ry += dry;
-        if(pawn.rx > 57) pawn.rx = 57;   // augšā
-        if(pawn.rx < -57) pawn.rx = -57; // lejā
+        if (pawn.rx > 57) pawn.rx = 57;   // augšā
+        if (pawn.rx < -57) pawn.rx = -57; // lejā
     }
-    
+
+    lode.style.transform = `translate3d(${600 + pawn.x - 2 / 2}px, ${400 + pawn.y - 2 / 2}px, ${pawn.z - 10 - lode_z}px)`;
+    lode_z++;
+    if (lode_z == 100) {
+        lode_z = 0;
+        lode.style.display = "none";
+    }
+
+
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
     rotate(spelesElementi[level][1], 0.5);
     interact(spelesElementi[level][1]);
     interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
+    // move(objekti[0], 0.1, -0.1, 0.1);
 }

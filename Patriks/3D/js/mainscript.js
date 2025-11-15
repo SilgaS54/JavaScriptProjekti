@@ -15,6 +15,7 @@ buttonStart.onclick = function(){
   createWorld(spelesElementi[level][0]);
   zimetObjektus(spelesElementi[level][1], `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
+  zimetLodi(pawn);
   timerGame = setInterval(update, 10);
 }
 
