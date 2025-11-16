@@ -36,7 +36,7 @@ function update() { // mūsu 3D pasaules izmaiņas
 
     lode_dx = -lode_atrums_x * Math.cos(lode_ry * deg) + (lode_atrums_y) * Math.sin(lode_ry * deg);
     lode_dz = -(lode_atrums_x) * Math.sin(lode_ry * deg) - (lode_atrums_y) * Math.cos(lode_ry * deg);
-    console.log(`dx = ${dx}, dz = ${dz}, lode_ry = ${lode_ry}, dry = ${dry}`);
+    // console.log(`dx = ${dx}, dz = ${dz}, lode_ry = ${lode_ry}, dry = ${dry}`);
 
     lode_x += lode_dx;
     lode_z += lode_dz;
@@ -49,6 +49,7 @@ function update() { // mūsu 3D pasaules izmaiņas
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
     rotate(spelesElementi[level][1], 0.5);
     interact(spelesElementi[level][1]);
+    interactLode(spelesElementi[level][1]);
     interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
     // move(objekti[0], 0.1, -0.1, 0.1);
 }
