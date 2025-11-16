@@ -47,9 +47,13 @@ function update() { // mūsu 3D pasaules izmaiņas
     }
 
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
-    rotate(spelesElementi[level][1], 0.5);
-    interact(spelesElementi[level][1]);
-    interactLode(spelesElementi[level][1]);
-    interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
+    // rotate(spelesElementi[level][1], 0.5);
+    // interact(spelesElementi[level][1]);
+    // interactLode(spelesElementi[level][1]);
+    rotate(izvObj, 0.5);
+    interact(izvObj);
+    interactLode(izvObj);
+    //interactTeleport(spelesElementi[level][2], spelesElementi[level][1]);
+    interactTeleport(spelesElementi[level][2], izvObj);
     // move(objekti[0], 0.1, -0.1, 0.1);
 }

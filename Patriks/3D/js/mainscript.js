@@ -12,8 +12,9 @@ buttonStart.onclick = function(){
   menuStart.style.display = "none";
   canlock = true;
   world.innerHTML = "";
+  izvObj = structuredClone(spelesElementi[level][1]);
   createWorld(spelesElementi[level][0]);
-  zimetObjektus(spelesElementi[level][1], `objekts`);
+  zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
   zimetLodi(pawn);
   timerGame = setInterval(update, 10);
@@ -22,10 +23,11 @@ buttonStart.onclick = function(){
 buttonLimenis.onclick = function(){
   menuStart.style.display = "none";
   canlock = true;
-  level = 1;
+  level = 2;
+  izvObj = structuredClone(spelesElementi[level][1]);
   world.innerHTML = "";
   createWorld(spelesElementi[level][0]);
-  zimetObjektus(spelesElementi[level][1], `objekts`);
+  zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
   zimetLodi(pawn);
   timerGame = setInterval(update, 10);
