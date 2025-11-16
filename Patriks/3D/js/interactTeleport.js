@@ -21,6 +21,7 @@ function interactTeleport(tel, obj){
         createWorld(spelesElementi[level][0]);
         zimetObjektus(spelesElementi[level][1], `objekts`);
         zimetObjektus(spelesElementi[level][2], `teleports`);
+        zimetLodi(pawn);
       } else {
         kludasSkana.play();
       }
