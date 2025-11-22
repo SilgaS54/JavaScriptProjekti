@@ -14,8 +14,8 @@ function update() { // mūsu 3D pasaules izmaiņas
         }
     }
 
-    let drx = -mouseY;
-    let dry = mouseX;
+    let drx = -mouseY/4;
+    let dry = mouseX/4;
 
     mouseX = mouseY = 0;
 
@@ -60,7 +60,6 @@ function update() { // mūsu 3D pasaules izmaiņas
     rotate(izvObj, 0.5);
     interact(izvObj);
     interactLode(izvObj);
-    // interactLodeWalls(spelesElementi[level][0]);
     interactTeleport(spelesElementi[level][2], izvObj);
     // move(objekti[0], 0.1, -0.1, 0.1);
 }
