@@ -27,7 +27,7 @@ function interactTeleport(tel, obj){
         //zimetObjektus(spelesElementi[level][1], `objekts`);
         zimetObjektus(izvObj, `objekts`);
         zimetObjektus(spelesElementi[level][2], `teleports`);
-        zimetLodi(pawn);
+        zimetLodi();
       } else {
         kludasSkana.play();
       }

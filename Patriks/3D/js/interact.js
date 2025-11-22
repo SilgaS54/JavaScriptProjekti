@@ -19,14 +19,21 @@ function interact(obj) {
 
   document.onclick = function () {
     lode.style.display = "block";
-    lode_x = pawn.x;
-    lode_y = pawn.y;
-    lode_z = pawn.z;
-    lode_rx = pawn.rx;
-    lode_ry = pawn.ry + 45;
-    lode_rz = pawn.rz;
+    //lode_x = pawn.x;
+    pirmaLode.x = pawn.x;
+    //lode_y = pawn.y;
+    pirmaLode.y = pawn.y;
+    //lode_z = pawn.z;
+    pirmaLode.z = pawn.z;
+    //lode_rx = pawn.rx;
+    pirmaLode.rx = pawn.rx;
+    //lode_ry = pawn.ry + 45;
+    pirmaLode.ry = pawn.ry + 45;
+    //lode_rz = pawn.rz;
+    pirmaLode.rz = pawn.rz;
     lode_move = 100;
-    lode_atrums_x = lode_atrums_y = 5;
+    //lode_atrums_x = lode_atrums_y = 5;
+    pirmaLode.vx = pirmaLode.vy = 5;
 
     // let lode1 = document.createElement("div");
     // lode1.id = `lode${lode_daudzums}`;

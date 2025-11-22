@@ -7,6 +7,7 @@ var spelesElementi = [
 
 var punkti = 0;
 var pawn = new player(90, 0, 90, 0, 0);
+var pirmaLode = new player();
 
 buttonStart.onclick = function(){
   menuStart.style.display = "none";
@@ -16,7 +17,7 @@ buttonStart.onclick = function(){
   createWorld(spelesElementi[level][0]);
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
-  zimetLodi(pawn);
+  zimetLodi();
   timerGame = setInterval(update, 10);
 }
 
@@ -29,6 +30,6 @@ buttonLimenis.onclick = function(){
   createWorld(spelesElementi[level][0]);
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
-  zimetLodi(pawn);
+  zimetLodi();
   timerGame = setInterval(update, 10);
 }
