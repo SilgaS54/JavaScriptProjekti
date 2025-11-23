@@ -6,8 +6,11 @@ var spelesElementi = [
 ];
 
 var punkti = 0;
+var lode_skaits = 0;
 var pawn = new player(90, 0, 90, 0, 0);
 var pirmaLode = new player();
+var manaLode = [];
+var manaLodeData = [];
 
 buttonStart.onclick = function(){
   menuStart.style.display = "none";
@@ -18,6 +21,9 @@ buttonStart.onclick = function(){
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
   zimetLodi();
+  manaLode[lode_skaits] = zimetManuLodi(lode_skaits);
+  manaLodeData[lode_skaits] = new player();
+  lode_skaits++;
   timerGame = setInterval(update, 10);
 }
 

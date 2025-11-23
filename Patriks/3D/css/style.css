@@ -45,18 +45,6 @@
     /* z-index: 2000; */
 }
 
-#lode {
-    position: absolute;
-    /* top: 750px;
-    left: 700px; */
-    /* transform: translate(-50%, -50%); */
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: gold;
-    /* z-index: 2010; */
-}
-
 #mansTeksts{
     position: absolute;
     color: red;
