@@ -9,6 +9,7 @@ class player {
         this.vx = 5;//ātrums x virzienā
         this.vy = 5;//ātrums y (vertikālā virzienā)
         this.vz = 5;//ātrums z virzienā
+        this.timer = 100;
     }
 } 
 
