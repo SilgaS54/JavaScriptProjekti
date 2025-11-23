@@ -72,6 +72,8 @@ function update() { // mūsu 3D pasaules izmaiņas
 
         manaLode[sk].style.transform = `translate3d(${600 + manaLodeData[sk].x - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`width`).slice(0, -2)) / 2}px, ${400 + manaLodeData[sk].y - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`height`).slice(0, -2)) / 2}px, ${manaLodeData[sk].z}px) rotateX(${manaLodeData[sk].rx}deg) rotateY(${manaLodeData[sk].ry}deg) rotateZ(${0}deg)`;
 
+        interactLode(izvObj, manaLodeData[sk]);
+
         manaLodeData[sk].timer--;
         if(manaLodeData[sk].timer < 0){
             // manaLode.splice(sk, 1);
@@ -93,7 +95,7 @@ function update() { // mūsu 3D pasaules izmaiņas
 
     rotate(izvObj, 0.5);
     interact(izvObj);
-    interactLode(izvObj);
+    // interactLode(izvObj);
     interactTeleport(spelesElementi[level][2], izvObj);
     // move(objekti[0], 0.1, -0.1, 0.1);
 }
