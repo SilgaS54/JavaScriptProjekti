@@ -70,13 +70,16 @@ function update() { // mūsu 3D pasaules izmaiņas
         manaLodeData[sk].x += ldx;
         manaLodeData[sk].z += ldz;
 
-        manaLode[sk].style.transform = `translate3d(${600 + manaLodeData[sk].x - 20 / 2}px, ${400 + manaLodeData[sk].y - 20 / 2}px, ${manaLodeData[sk].z}px) rotateX(${manaLodeData[sk].rx}deg) rotateY(${manaLodeData[sk].ry}deg) rotateZ(${0}deg)`;
+        manaLode[sk].style.transform = `translate3d(${600 + manaLodeData[sk].x - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`width`).slice(0, -2)) / 2}px, ${400 + manaLodeData[sk].y - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`height`).slice(0, -2)) / 2}px, ${manaLodeData[sk].z}px) rotateX(${manaLodeData[sk].rx}deg) rotateY(${manaLodeData[sk].ry}deg) rotateZ(${0}deg)`;
 
         manaLodeData[sk].timer--;
         if(manaLodeData[sk].timer < 0){
             // manaLode.splice(sk, 1);
             // manaLodeData.splice(sk, 1);
             manaLode[sk].remove();
+        } else if (manaLodeData[sk].timer < 5) {
+            manaLode[sk].style.width = `200px`;
+            manaLode[sk].style.height = `200px`;
         }
     }
 
