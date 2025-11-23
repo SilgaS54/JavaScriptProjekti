@@ -36,7 +36,7 @@ function interact(obj) {
     pirmaLode.vx = pirmaLode.vy = 5;
 
     //manaLode - START - 
-    console.log(lode_skaits);
+    // console.log(lode_skaits);
     manaLode[lode_skaits] = zimetManuLodi(lode_skaits);
     manaLodeData[lode_skaits] = new player();
     manaLodeData[lode_skaits].x = pawn.x;

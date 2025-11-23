@@ -71,6 +71,13 @@ function update() { // mūsu 3D pasaules izmaiņas
         manaLodeData[sk].z += ldz;
 
         manaLode[sk].style.transform = `translate3d(${600 + manaLodeData[sk].x - 20 / 2}px, ${400 + manaLodeData[sk].y - 20 / 2}px, ${manaLodeData[sk].z}px) rotateX(${manaLodeData[sk].rx}deg) rotateY(${manaLodeData[sk].ry}deg) rotateZ(${0}deg)`;
+
+        manaLodeData[sk].timer--;
+        if(manaLodeData[sk].timer < 0){
+            // manaLode.splice(sk, 1);
+            // manaLodeData.splice(sk, 1);
+            manaLode[sk].remove();
+        }
     }
 
     // lode_move -= 1;
