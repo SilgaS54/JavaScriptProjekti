@@ -1,11 +1,13 @@
-function collision(mapObj) {
-  onGround = false;
+function collision(mapObj, leadObj, type) {
+  if (type !== "lode") {
+    onGround = false;
+  }
 
   for (let i = 0; i < mapObj.length; i++) {
-    //spēlētāja koordinātes katra taisntstūra koordināšu sistēmā
-    let x0 = pawn.x - mapObj[i][0];
-    let y0 = pawn.y - mapObj[i][1];
-    let z0 = pawn.z - mapObj[i][2];
+    //spēlētāja koordinātes katra taiststūra koordināšu sistēmā
+    let x0 = leadObj.x - mapObj[i][0];
+    let y0 = leadObj.y - mapObj[i][1];
+    let z0 = leadObj.z - mapObj[i][2];
 
     if (
       x0 ** 2 + y0 ** 2 + z0 ** 2 + dx ** 2 + dy ** 2 + dz ** 2 <
@@ -48,33 +50,39 @@ function collision(mapObj) {
         Math.abs(point1[1]) < (mapObj[i][7] + 70) / 2 &&
         Math.abs(point1[2]) < 50
       ) {
-        point1[2] = Math.sign(point0[2]) * 50;
-        let point2 = coorReTransform(
-          point1[0],
-          point1[1],
-          point1[2],
-          mapObj[i][3],
-          mapObj[i][4],
-          mapObj[i][5]
-        );
-        let point3 = coorReTransform(
-          point1[0],
-          point1[1],
-          0,
-          mapObj[i][3],
-          mapObj[i][4],
-          mapObj[i][5]
-        );
-        dx = point2[0] - x0;
-        dy = point2[1] - y0;
-        dz = point2[2] - z0;
-
-        if (Math.abs(normal[1]) > 0.8) {
-          if (point3[1] > point2[1]) {
-            onGround = true;
-          }
+        // lodei nepieciešāmās darbības
+        if (type === "lode") {
+          lode.remove();
+          zimetLodi();
         } else {
-          dy = y1 - y0;
+          point1[2] = Math.sign(point0[2]) * 50;
+          let point2 = coorReTransform(
+            point1[0],
+            point1[1],
+            point1[2],
+            mapObj[i][3],
+            mapObj[i][4],
+            mapObj[i][5]
+          );
+          let point3 = coorReTransform(
+            point1[0],
+            point1[1],
+            0,
+            mapObj[i][3],
+            mapObj[i][4],
+            mapObj[i][5]
+          );
+          dx = point2[0] - x0;
+          dy = point2[1] - y0;
+          dz = point2[2] - z0;
+
+          if (Math.abs(normal[1]) > 0.8) {
+            if (point3[1] > point2[1]) {
+              onGround = true;
+            }
+          } else {
+            dy = y1 - y0;
+          }
         }
       }
     }
