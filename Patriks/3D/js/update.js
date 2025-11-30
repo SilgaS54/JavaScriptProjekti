@@ -121,8 +121,8 @@ function update() { // mūsu 3D pasaules izmaiņas
             manaLode[sk].remove();
             // console.log(manaLode, manaLodeData, manaLode.length);
             // console.log(sk);
-            manaLode.splice(sk - 1, 1);
-            manaLodeData.splice(sk - 1, 1);
+            manaLode.splice(sk, 1);
+            manaLodeData.splice(sk, 1);
 
             // manaLode.push(zimetManuLodi(lode_skaits));
             // manaLodeData.push(new player());
