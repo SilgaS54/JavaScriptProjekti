@@ -12,23 +12,23 @@
 // 10. - tekstūra
 //-----------------
 
-var teleports= [
+var teleports = [
   [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 1, "url(textures/teleport.gif)"],
 ]; // 1. līmenis
 
 //Silgas kods
-var teleportsSilga= [
+var teleportsSilga = [
   [-400, 0, -700, 0, -45, 0, 200, 200, "yellow", 1, "url(textures/teleport2.gif)"],
 ];
 //2. līmenis
 
 //Kristera teleports
-var teleportsKristers= [
+var teleportsKristers = [
   [-800, 0, 800, 0, 45, 0, 200, 200, "yellow", 0.3],
 ];
 //3. līmenis
 
 //Silgas2 kods
-var teleportsSS= [
+var teleportsSS = [
   [-900, 0, -900, 0, 45, 0, 200, 200, "yellow", 1, "url(textures/teleport2.gif)"],
 ];
