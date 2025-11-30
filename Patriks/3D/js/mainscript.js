@@ -20,10 +20,7 @@ buttonStart.onclick = function(){
   createWorld(spelesElementi[level][0]);
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
-  // zimetLodi();
-  // manaLode[lode_skaits] = zimetManuLodi(lode_skaits);
   manaLode.push(zimetManuLodi(lode_skaits));
-  // manaLodeData[lode_skaits] = new player();
   manaLodeData.push(new player());
   lode_skaits++;
   timerGame = setInterval(update, 10);
@@ -38,6 +35,5 @@ buttonLimenis.onclick = function(){
   createWorld(spelesElementi[level][0]);
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
-  // zimetLodi();
   timerGame = setInterval(update, 10);
 }

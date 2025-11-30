@@ -1,7 +1,6 @@
 function zimetManuLodi(num) {
     let manaLode = document.createElement("div");
     manaLode.id = `manalode${num}`;
-    // manaLode.id = `lode`;
     manaLode.style.display = "block";
     manaLode.style.position = "absolute";
     manaLode.style.width = `20px`;
@@ -11,5 +10,4 @@ function zimetManuLodi(num) {
     world.appendChild(manaLode);
 
     return manaLode;
-    // lode_daudzums++;
 }

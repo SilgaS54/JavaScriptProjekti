@@ -6,15 +6,7 @@ function interactTeleport(tel, obj){
         level++;
         teleportaSkana.play();
         if(level == spelesElementi.length){
-          // mansTeksts.innerHTML = "";
-          // world.innerHTML = "";
-          // myH1.textContent = "Spēle ir pabeigta, visi līmeņi ir izieti, nospied ESC lai izietu!";
-          // mansTeksts.appendChild(myH1);
-          // menuStart.style.display = "block";
-          // canlock = false;
           level = 0;
-          // clearInterval(timerGame);
-          // continue;
         }
         punkti = 0;
         world.innerHTML = "";
@@ -24,10 +16,9 @@ function interactTeleport(tel, obj){
         pawn.z = 900;
         izvObj = structuredClone(spelesElementi[level][1]);
         createWorld(spelesElementi[level][0]);
-        //zimetObjektus(spelesElementi[level][1], `objekts`);
         zimetObjektus(izvObj, `objekts`);
         zimetObjektus(spelesElementi[level][2], `teleports`);
-        zimetLodi();
+        // zimetLodi();
       } else {
         kludasSkana.play();
       }

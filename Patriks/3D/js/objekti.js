@@ -1,18 +1,18 @@
 var objekti = [
-    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/euro.png)"], //objekts1
-    //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
-    [-500, 70, 0, 0, 0, 0, 25, 25, "green", 1, "url(textures/1euro.png)"], 
+  [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/euro.png)"], //objekts1
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+  [-500, 70, 0, 0, 0, 0, 25, 25, "green", 1, "url(textures/1euro.png)"],
 ];
 
 //Silgas objekti
 var objektiSilga = [
-    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //pirmais objekts vidū
-    //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
-    [-200, 70, 0, 0, 0, 0, 25, 25, "blue", 1],
-    [-700, 70, -700, 0, 0, 0, 25, 25, "red", 1],
-    [-900, 70, 900, 0, 90, 0, 25, 25, "white", 1],
-    [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1],
-    
+  [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //pirmais objekts vidū
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
+  [-200, 70, 0, 0, 0, 0, 25, 25, "blue", 1],
+  [-700, 70, -700, 0, 0, 0, 25, 25, "red", 1],
+  [-900, 70, 900, 0, 90, 0, 25, 25, "white", 1],
+  [600, 70, -600, 0, 0, 0, 25, 25, "violet", 1],
+
 ];
 //---------
 // Kristera objekti
