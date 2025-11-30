@@ -6,9 +6,8 @@ var level = 0;
 var g = 0.1;
 var onGround = false;
 var canlock = false;
+var canShoot = false;
 
-var lode_daudzums = 1;
-// var lode_x, lode_y, lode_z, lode_rx, lode_ry, lode_atrums_x, lode_atrums_y, lode_dx, lode_dz;
-// var lode_move = 0;
+var lode_daudzums = 10;
 
 var izvObj = [];

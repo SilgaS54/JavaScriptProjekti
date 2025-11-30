@@ -1,8 +1,9 @@
 var spelesElementi = [
-  //0. - karte, 1. - objekti, 3. - teleporti
-  [map, objekti, teleports],
-  [mapSilga, objektiSilga, teleportsSilga],
-  [mapKristers, objektiKristers, teleportsKristers]
+  //0. - karte, 1. - objekti, 2. - teleporti, 3. - pistole
+  [map, objekti, teleports, pistole],
+  [mapSilga, objektiSilga, teleportsSilga, pistoleSilga],
+  [mapKristers, objektiKristers, teleportsKristers, pistoleKristers],
+  [mapSS, objektiSS, teleportsSS, pistoleSS]
 ];
 
 var punkti = 0;
@@ -17,9 +18,11 @@ buttonStart.onclick = function(){
   canlock = true;
   world.innerHTML = "";
   izvObj = structuredClone(spelesElementi[level][1]);
+  izvPistole = structuredClone(spelesElementi[level][3]);
   createWorld(spelesElementi[level][0]);
   zimetObjektus(izvObj, `objekts`);
   zimetObjektus(spelesElementi[level][2], `teleports`);
+  zimetObjektus(izvPistole, `pistole`);
   manaLode.push(zimetManuLodi(lode_skaits));
   manaLodeData.push(new player());
   lode_skaits++;

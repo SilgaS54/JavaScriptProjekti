@@ -14,7 +14,7 @@
 
 var teleports = [
   [-800, 0, -800, 0, 45, 0, 200, 200, "yellow", 1, "url(textures/teleport.gif)"],
-]; // 1. līmenis
+  ]; // 1. līmenis
 
 //Silgas kods
 var teleportsSilga = [
