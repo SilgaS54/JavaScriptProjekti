@@ -11,5 +11,5 @@ class player {
         this.vz = 5;//ātrums z virzienā
         this.timer = 100;
     }
-} 
+}
 
