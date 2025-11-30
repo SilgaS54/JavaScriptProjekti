@@ -17,53 +17,6 @@ function interact(obj) {
     }
   }
 
-  // document.onclick = function () { // 29.11
-  //   // lode.style.display = "block";
-  //   //lode_x = pawn.x;
-  //   pirmaLode.x = pawn.x;
-  //   //lode_y = pawn.y;
-  //   pirmaLode.y = pawn.y;
-  //   //lode_z = pawn.z;
-  //   pirmaLode.z = pawn.z;
-  //   //lode_rx = pawn.rx;
-  //   pirmaLode.rx = pawn.rx;
-  //   //lode_ry = pawn.ry + 45;
-  //   pirmaLode.ry = pawn.ry + 45;
-  //   //lode_rz = pawn.rz;
-  //   pirmaLode.rz = pawn.rz;
-  //   // lode_move = 100;
-  //   //lode_atrums_x = lode_atrums_y = 5;
-  //   pirmaLode.vx = pirmaLode.vy = 5;
-
-  //   //manaLode - START - 
-  //   // console.log(lode_skaits);
-  //   manaLode[lode_skaits] = zimetManuLodi(lode_skaits);
-  //   manaLodeData[lode_skaits] = new player();
-  //   manaLodeData[lode_skaits].x = pawn.x;
-  //   manaLodeData[lode_skaits].y = pawn.y;
-  //   manaLodeData[lode_skaits].z = pawn.z;
-  //   manaLodeData[lode_skaits].rx = pawn.rx;
-  //   manaLodeData[lode_skaits].ry = pawn.ry + 45;
-  //   manaLodeData[lode_skaits].rz = pawn.rz;
-  //   manaLodeData[lode_skaits].vx = 5;
-  //   manaLodeData[lode_skaits].vy = 5;
-  //   lode_skaits++;
-    //manaLode - END - 29.11
-
-    // var manaLode = zimetManuLodi(2);
-
-    // let lode1 = document.createElement("div");
-    // lode1.id = `lode${lode_daudzums}`;
-    // for(let i = 0; i < 500; i++){
-    //   lode1.style.transform = `translate3d(${600 + player.x - 20 / 2}px, ${400 + player.y - 20 / 2}px, ${player.z - i}px)`; 
-    //    console.log("LODE1");
-    // }
-    // world.appendChild(lode1);
-    // lode_daudzums++;
-
-    // move(lode, 105);
-
-
     // Šaušanas iespēja pēc koordinātēm
     // for (let j = 0; j < obj.length; j++) {
     //   var mobj = document.getElementById(`objekts${j}`);
