@@ -8,5 +8,4 @@ var menuStart = document.getElementById("menuStart");
 var buttonStart = document.getElementById("buttonStart");
 var buttonLimenis = document.getElementById("buttonLimenis");
 
-// var lode = document.getElementById("lode");
 var speletajs = document.getElementById("pawn");
