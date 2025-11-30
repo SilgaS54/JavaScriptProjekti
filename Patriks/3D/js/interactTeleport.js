@@ -18,7 +18,6 @@ function interactTeleport(tel, obj){
         createWorld(spelesElementi[level][0]);
         zimetObjektus(izvObj, `objekts`);
         zimetObjektus(spelesElementi[level][2], `teleports`);
-        // zimetLodi();
       } else {
         kludasSkana.play();
       }
