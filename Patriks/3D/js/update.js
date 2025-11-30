@@ -40,45 +40,95 @@ function update() { // mūsu 3D pasaules izmaiņas
     // lode.style.transform = `translate3d(${600 + pirmaLode.x - 20 / 2}px, ${400 + pirmaLode.y - 20 / 2}px, ${pirmaLode.z}px) rotateX(${pirmaLode.rx}deg) rotateY(${pirmaLode.ry}deg) rotateZ(${0}deg)`;
 
     // lode_dx = -lode_atrums_x * Math.cos(lode_ry * deg) + (lode_atrums_y) * Math.sin(lode_ry * deg);
-    lode_dx = -pirmaLode.vx * Math.cos(pirmaLode.ry * deg) + (pirmaLode.vy) * Math.sin(pirmaLode.ry * deg);
-    // lode_dz = -(lode_atrums_x) * Math.sin(lode_ry * deg) - (lode_atrums_y) * Math.cos(lode_ry * deg);
-    lode_dz = -(pirmaLode.vx) * Math.sin(pirmaLode.ry * deg) - (pirmaLode.vy) * Math.cos(pirmaLode.ry * deg);
-    // console.log(`dx = ${dx}, dz = ${dz}, lode_ry = ${lode_ry}, dry = ${dry}`);
+    // lode_dx = -pirmaLode.vx * Math.cos(pirmaLode.ry * deg) + (pirmaLode.vy) * Math.sin(pirmaLode.ry * deg);
+    // // lode_dz = -(lode_atrums_x) * Math.sin(lode_ry * deg) - (lode_atrums_y) * Math.cos(lode_ry * deg);
+    // lode_dz = -(pirmaLode.vx) * Math.sin(pirmaLode.ry * deg) - (pirmaLode.vy) * Math.cos(pirmaLode.ry * deg);
+    // // console.log(`dx = ${dx}, dz = ${dz}, lode_ry = ${lode_ry}, dry = ${dry}`);
 
-    // lode_x += lode_dx;
-    // lode_z += lode_dz;
-    pirmaLode.x += lode_dx;
-    pirmaLode.z += lode_dz;
+    // // lode_x += lode_dx;
+    // // lode_z += lode_dz;
+    // pirmaLode.x += lode_dx;
+    // pirmaLode.z += lode_dz;
 
     // lode = manaLode;
 
     // lode = document.getElementById(`lode1`);
-    lode.style.transform = `translate3d(${600 + pirmaLode.x - 20 / 2}px, ${400 + pirmaLode.y - 20 / 2}px, ${pirmaLode.z}px) rotateX(${pirmaLode.rx}deg) rotateY(${pirmaLode.ry}deg) rotateZ(${0}deg)`;
-    lode_move -= 1;
-    if (lode_move < 0) {
-        lode.style.display = "none";
-        lode.remove();
-        zimetLodi();
+    // lode.style.transform = `translate3d(${600 + pirmaLode.x - 20 / 2}px, ${400 + pirmaLode.y - 20 / 2}px, ${pirmaLode.z}px) rotateX(${pirmaLode.rx}deg) rotateY(${pirmaLode.ry}deg) rotateZ(${0}deg)`;
+    // lode_move -= 1;
+    // if (lode_move < 0) {
+    //     lode.style.display = "none";
+    //     lode.remove();
+    //     zimetLodi();
+    // }
+
+    document.onclick = function () {
+        // lode.style.display = "block";
+        //lode_x = pawn.x;
+        // pirmaLode.x = pawn.x;
+        // //lode_y = pawn.y;
+        // pirmaLode.y = pawn.y;
+        // //lode_z = pawn.z;
+        // pirmaLode.z = pawn.z;
+        // //lode_rx = pawn.rx;
+        // pirmaLode.rx = pawn.rx;
+        // //lode_ry = pawn.ry + 45;
+        // pirmaLode.ry = pawn.ry + 45;
+        // //lode_rz = pawn.rz;
+        // pirmaLode.rz = pawn.rz;
+        // // lode_move = 100;
+        // //lode_atrums_x = lode_atrums_y = 5;
+        // pirmaLode.vx = pirmaLode.vy = 5;
+
+        //manaLode - START - 
+        if (lock) {
+            console.log(lode_skaits);
+            //manaLode[lode_skaits] = zimetManuLodi(lode_skaits);
+            manaLode.push(zimetManuLodi(lode_skaits));
+            manaLodeData.push(new player(pawn.x, pawn.y, pawn.z, pawn.rx, pawn.ry + 45, pawn.rz, 5, 5));
+            // manaLodeData[lode_skaits] = new player();
+            // manaLodeData[lode_skaits].x = pawn.x;
+            // manaLodeData[lode_skaits].y = pawn.y;
+            // manaLodeData[lode_skaits].z = pawn.z;
+            // manaLodeData[lode_skaits].rx = pawn.rx;
+            // manaLodeData[lode_skaits].ry = pawn.ry + 45;
+            // manaLodeData[lode_skaits].rz = pawn.rz;
+            // manaLodeData[lode_skaits].vx = 5;
+            // manaLodeData[lode_skaits].vy = 5;
+            lode_skaits++;
+            console.log(manaLode, manaLodeData, manaLode.length, manaLodeData.length, lode_skaits);
+        }
+
     }
 
     //manaLode
     for (let sk = 0; sk < manaLode.length; sk++) {
-        ldx = -pirmaLode.vx * Math.cos(pirmaLode.ry * deg) + (pirmaLode.vy) * Math.sin(pirmaLode.ry * deg);
+        // if
+        ldx = -manaLodeData[sk].vx * Math.cos(manaLodeData[sk].ry * deg) + (manaLodeData[sk].vy) * Math.sin(manaLodeData[sk].ry * deg);
 
-        ldz = -(pirmaLode.vx) * Math.sin(pirmaLode.ry * deg) - (pirmaLode.vy) * Math.cos(pirmaLode.ry * deg);
+        ldz = -(manaLodeData[sk].vx) * Math.sin(manaLodeData[sk].ry * deg) - (manaLodeData[sk].vy) * Math.cos(manaLodeData[sk].ry * deg);
 
         manaLodeData[sk].x += ldx;
         manaLodeData[sk].z += ldz;
 
         manaLode[sk].style.transform = `translate3d(${600 + manaLodeData[sk].x - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`width`).slice(0, -2)) / 2}px, ${400 + manaLodeData[sk].y - Number(window.getComputedStyle(manaLode[sk]).getPropertyValue(`height`).slice(0, -2)) / 2}px, ${manaLodeData[sk].z}px) rotateX(${manaLodeData[sk].rx}deg) rotateY(${manaLodeData[sk].ry}deg) rotateZ(${0}deg)`;
 
-        interactLode(izvObj, manaLodeData[sk]);
+        interactLode(izvObj, manaLodeData[sk], manaLode[sk], sk);
+
+        // console.log(manaLode, manaLodeData, manaLode.length, manaLodeData.length, lode_skaits, manaLodeData[sk].vx);
 
         manaLodeData[sk].timer--;
-        if(manaLodeData[sk].timer < 0){
-            // manaLode.splice(sk, 1);
-            // manaLodeData.splice(sk, 1);
+        if (manaLodeData[sk].timer < 0) {
             manaLode[sk].remove();
+            // console.log(manaLode, manaLodeData, manaLode.length);
+            // console.log(sk);
+            manaLode.splice(sk - 1, 1);
+            manaLodeData.splice(sk - 1, 1);
+
+            // manaLode.push(zimetManuLodi(lode_skaits));
+            // manaLodeData.push(new player());
+            // lode_skaits++;
+
+            // console.log(manaLode, manaLodeData, manaLodeData.length);
         } else if (manaLodeData[sk].timer < 5) {
             manaLode[sk].style.width = `200px`;
             manaLode[sk].style.height = `200px`;
