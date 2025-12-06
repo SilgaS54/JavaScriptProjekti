@@ -6,7 +6,7 @@ function interactLode(obj, lodeData, lodeStyle, sk) {
       (lodeData.z - obj[i][2]) ** 2;
     if (r < obj[i][6] ** 2 + obj[i][7] ** 2) {
       panemsanasSkana.play();
-      punkti += 2;
+      punkti += 2; // Dubulti punkti
       myH1.textContent = `Punkti: ${punkti} no ${obj.length}`;
       if (punkti == obj.length) {
         var myH2 = document.createElement("h1");

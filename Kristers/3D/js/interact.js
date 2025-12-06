@@ -6,7 +6,7 @@ function interact(obj) {
       (pawn.z - obj[i][2]) ** 2;
     if (r < obj[i][6] ** 2 + obj[i][7] ** 2) {
       panemsanasSkana.play();
-      punkti += 1;
+      punkti += 1; // Viens punkts
       myH1.textContent = `Punkti: ${punkti} no ${obj.length}`;
       if (punkti == obj.length) {
         var myH2 = document.createElement("h1");
