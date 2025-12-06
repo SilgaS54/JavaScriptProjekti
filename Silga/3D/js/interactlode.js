@@ -10,7 +10,7 @@ function interactLode(obj, lodeData, lodeStyle, sk) {
         myH2.textContent = "Punkti sakrāti, var doties uz teleportu!"
         mansTeksts.appendChild(myH2);
       }
-      mansTeksts.appendChild(myH1);
+
       obj[i][0] = 100000;
       obj[i][1] = 100000;
       obj[i][2] = 100000;

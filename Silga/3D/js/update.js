@@ -38,10 +38,16 @@ function update() { // mūsu 3D pasaules izmaiņas
             manaLodeData.push(new player(pawn.x, pawn.y, pawn.z, pawn.rx, pawn.ry + 45, pawn.rz, 5, 5));
             lode_skaits++;
             lode_daudzums--;
-            if(lode_daudzums<1){
+            myh3.textContent = `Lodes: ${lode_daudzums} no ${pilna_municija}`;
+            if (lode_daudzums < 1) {
                 canShoot = false;
                 lode_daudzums = 0;
+                myh3.textContent = `Lodes beigušās`;
+
             }
+
+            mansTeksts.appendChild(myh3);
+
         }
     }
 
