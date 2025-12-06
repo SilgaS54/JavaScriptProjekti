@@ -4,9 +4,11 @@ function interactPistole(obj) {
         if (r < (obj[i][6]) ** 2 + (obj[i][7]) ** 2) {
             panemsanasSkana.play();
             canShoot = true;
-            myH1.textContent = `Pistole ir paņemta`;
+            lode_daudzums = pilna_municija;
+            myh3.textContent = `Pistole paņemta`;
 
-            mansTeksts.appendChild(myH1);
+            mansTeksts.appendChild(myh3);
+
             obj[i][0] = 100000;
             obj[i][1] = 100000;
             obj[i][2] = 100000;
