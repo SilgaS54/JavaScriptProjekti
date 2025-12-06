@@ -8,15 +8,5 @@ var onGround = false;
 var canlock = false;
 
 var lode_daudzums = 1;
-var lode_x,
-  lode_y,
-  lode_z,
-  lode_rx,
-  lode_ry,
-  lode_atrums_x,
-  lode_atrums_y,
-  lode_dx,
-  lode_dz;
-var lode_move = 0;
 
 var izvObj = [];
