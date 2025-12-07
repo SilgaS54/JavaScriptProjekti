@@ -79,7 +79,9 @@ function update() { // mūsu 3D pasaules izmaiņas
 
     rotate(izvObj, 0.5, `objekts`);
     rotate(izvPistole, 1.7, `pistole`);
+    rotate(izvMunicija, 1, `municija`);
     interact(izvObj);
     interactPistole(izvPistole);
+    interactMunicija(izvMunicija);
     interactTeleport(spelesElementi[level][2], izvObj);
 }
