@@ -33,7 +33,7 @@ function update() { // mūsu 3D pasaules izmaiņas
     }
 
     document.onclick = function () {
-        if (lock && canShoot) {
+        if (lock && canShoot && irPistole) {
             manaLode.push(zimetManuLodi(lode_skaits));
             manaLodeData.push(new player(pawn.x, pawn.y, pawn.z, pawn.rx, pawn.ry + 45, pawn.rz, 5, 5));
             lode_skaits++;
