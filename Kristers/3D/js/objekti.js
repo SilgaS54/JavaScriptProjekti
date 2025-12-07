@@ -1,13 +1,27 @@
 var objekti = [
-  [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"], //objekts1
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"], //objekts
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras [11]Vai ir šaujams
   [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"],
+  [
+    -300,
+    70,
+    250,
+    0,
+    0,
+    0,
+    25,
+    25,
+    "green",
+    1,
+    "url(textures/bottle.jpg)",
+    true,
+  ],
 ];
 
 //Silgas objekti
 var objektiSilga = [
   [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"], //pirmais objekts vidū
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras [11]Vai ir šaujams
   [-200, 70, 0, 0, 0, 0, 25, 25, "blue", 1, "url(textures/cookies.png)"],
   [-700, 70, -700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"],
   [-900, 70, 900, 0, 90, 0, 25, 25, "white", 1, "url(textures/cookies.png)"],
@@ -17,7 +31,7 @@ var objektiSilga = [
 // Kristera objekti
 var objektiKristers = [
   [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"],
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras [11]Vai ir šaujams
   [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"],
   [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"],
   [600, -25, 340, 0, 0, 0, 25, 25, "white", 1, "url(textures/cookies.png)"],
@@ -26,7 +40,7 @@ var objektiKristers = [
 // Extra objekti
 var objektiExtra = [
   [-150, 50, 0, 0, 0, 0, 25, 25, "yellow", 1, "url(textures/cookies.png)"],
-  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana
+  //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras [11]Vai ir šaujams
   [-150, 25, 700, 0, 0, 0, 25, 25, "red", 1, "url(textures/cookies.png)"],
   [-600, 0, 340, 0, 0, 0, 25, 25, "green", 1, "url(textures/cookies.png)"],
   [600, -25, 340, 0, 0, 0, 25, 25, "white", 1, "url(textures/cookies.png)"],
