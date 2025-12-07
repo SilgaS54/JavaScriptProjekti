@@ -33,7 +33,7 @@ function update() { // mūsu 3D pasaules izmaiņas
     }
 
     document.onclick = function () {
-        if (lock && canShoot) {
+        if (lock && canShoot && irPistole) {
             manaLode.push(zimetManuLodi(lode_skaits));
             manaLodeData.push(new player(pawn.x, pawn.y, pawn.z, pawn.rx, pawn.ry + 45, pawn.rz, 5, 5));
             lode_skaits++;
@@ -43,7 +43,6 @@ function update() { // mūsu 3D pasaules izmaiņas
                 canShoot = false;
                 lode_daudzums = 0;
                 myh3.textContent = `Lodes beigušās`;
-
             }
 
             mansTeksts.appendChild(myh3);
@@ -77,9 +76,11 @@ function update() { // mūsu 3D pasaules izmaiņas
 
     world.style.transform = `translateZ(${600 - 0}px) rotateX(${pawn.rx}deg) rotateY(${pawn.ry}deg) translate3d(${-pawn.x}px, ${-pawn.y}px, ${-pawn.z}px)`;
 
-    rotate(izvObj, 0.5, `objekts`);
+    rotate(izvObj, 0.7, `objekts`);
     rotate(izvPistole, 1.7, `pistole`);
+    rotate(izvMunicija, 1, `municija`);
     interact(izvObj);
     interactPistole(izvPistole);
+    interactMunicija(izvMunicija);
     interactTeleport(spelesElementi[level][2], izvObj);
 }

@@ -7,6 +7,7 @@ var g = 0.1;
 var onGround = false;
 var canlock = false;
 var canShoot = false;
+var irPistole = false;
 var pilna_municija = 10;
 
 var lode_daudzums = pilna_municija;
