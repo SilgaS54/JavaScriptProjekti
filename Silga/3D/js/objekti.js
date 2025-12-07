@@ -1,7 +1,7 @@
 var objekti = [
-    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1], //objekts1
+    [0, 70, 0, 0, 0, 0, 25, 25, "yellow", 1,"url(textures/money.png)"], //objekts1
     //[0]x, [1]y, [2]z, [3]rx, [4]ry, [5]rz, [6]width, [7]height, [8]color, [9]opacity, [10]tekstūras mērogošana 
-    [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1],
+    [-100, 70, 0, 0, 0, 0, 25, 25, "green", 1, "url(textures/money.png)"],
     
 ];
 
