@@ -2,7 +2,7 @@ function interactTeleport(tel, obj){
   for(let i = 0; i < tel.length; i++){
     let r = (pawn.x-tel[i][0])**2 + (pawn.y-tel[i][1])**2 + (pawn.z-tel[i][2])**2;
     if(r < (tel[i][6]/4)**2 + (tel[i][7]/4)**2){
-      if(punkti == obj.length){
+      if(punkti >= obj.length){
         level++;
         teleportaSkana.play();
         if(level == spelesElementi.length){
